@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="Feeder.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="5.2569363"
+     inkscape:cx="367.79977"
+     inkscape:cy="475.8475"
+     inkscape:window-width="3840"
+     inkscape:window-height="2059"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid1826" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1410"
+       transform="translate(-0.9575497,15.639979)">
+      <rect
+         style="fill:#e3e3e3;fill-opacity:1;stroke:none;stroke-width:1.33845;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         id="rect31"
+         width="20"
+         height="100"
+         x="95"
+         y="98.5" />
+      <rect
+         style="fill:#e3e3e3;fill-opacity:1;stroke:none;stroke-width:1.49643;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         id="rect31-3"
+         width="50"
+         height="50"
+         x="107.13741"
+         y="-41.355022"
+         transform="rotate(45)" />
+      <circle
+         style="fill:#e3e3e3;fill-opacity:1;stroke:none;stroke-width:1.43903;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         id="path1076"
+         cx="105"
+         cy="148.5"
+         r="25" />
+      <rect
+         style="fill:#e3e3e3;fill-opacity:1;stroke:none;stroke-width:2.18226;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         id="rect1324"
+         width="70.699997"
+         height="70.699997"
+         x="69.644669"
+         y="-81.870514"
+         transform="scale(1,-1)" />
+      <path
+         id="path1574"
+         style="fill:#e30101;fill-opacity:1;stroke:none;stroke-width:1.30714;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+         d="m 122.85937,134.82616 v 9.05216 H 87.14062 v -9.03511 a 22.5,22.5 0 0 0 -4.64054,13.66532 22.5,22.5 0 0 0 4.64054,13.66531 v -9.0351 h 35.71875 v 9.0351 a 22.5,22.5 0 0 0 4.64055,-13.66531 22.5,22.5 0 0 0 -4.64055,-13.68237 z" />
+    </g>
+    <rect
+       style="fill:#1901e3;fill-opacity:1;stroke:none;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect2644"
+       width="5.2916665"
+       height="14.552083"
+       x="87.3125"
+       y="124.35416" />
+    <rect
+       style="fill:#1901e3;fill-opacity:1;stroke:none;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;paint-order:fill markers stroke"
+       id="rect2644-5"
+       width="5.2916665"
+       height="14.552083"
+       x="115.09375"
+       y="124.35416" />
+  </g>
+</svg>

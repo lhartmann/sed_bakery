@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48mm"
+   height="12mm"
+   viewBox="0 0 48.000002 12"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="Last Patches.svg"
+   inkscape:export-filename="/tmp/patches.png"
+   inkscape:export-xdpi="300.01999"
+   inkscape:export-ydpi="300.01999"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="8.5700562"
+     inkscape:cx="103.55825"
+     inkscape:cy="24.912322"
+     inkscape:window-width="3090"
+     inkscape:window-height="2059"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     fit-margin-left="1"
+     fit-margin-top="1"
+     fit-margin-right="1"
+     fit-margin-bottom="1"
+     height="245.87666mm">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9"
+       originx="0.6197216"
+       originy="40.096116" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <rect
+       x="-80"
+       y="-100"
+       width="120"
+       height="850"
+       id="rect26064" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.61972118,40.096123)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:semi-condensed;font-size:3.23582px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold Semi-Condensed';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;stroke-width:0.0758394"
+       x="-0.037091695"
+       y="-37.157631"
+       id="text11490"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:semi-condensed;font-size:3.23582px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold Semi-Condensed';text-align:start;text-anchor:start;stroke-width:0.0758394"
+         x="-0.037091695"
+         y="-37.157631"
+         id="tspan45114">&lt;== SALT FEED   MIXER ==&gt;</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:semi-condensed;font-size:3.23582px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold Semi-Condensed';text-align:start;text-anchor:start;stroke-width:0.0758394"
+         x="-0.037091695"
+         y="-33.112854"
+         id="tspan922">&lt;== FLOUR FEED</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:semi-condensed;font-size:3.23582px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold Semi-Condensed';text-align:start;text-anchor:start;stroke-width:0.0758394"
+         x="-0.037091695"
+         y="-29.068081"
+         id="tspan8564">^^^ CONVEYOR BELT ^^^</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.07583954,0,0,0.07583954,0.14778461,-28.352797)"
+       id="text26062"
+       style="font-size:16px;line-height:1.25;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect26064)" />
+  </g>
+</svg>
