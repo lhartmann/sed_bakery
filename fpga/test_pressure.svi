@@ -1,0 +1,23 @@
+// Cover test
+logic [15:0] S_pressure;
+
+Pressure(.clk(CLOCK_50), .en(r10), .*);
+
+always_comb //                    PCLO
+	if (stim <  100) LEDG = 9'b0000_1100; else // Pressurize
+	if (stim <  150) LEDG = 9'b0001_0100; else // De-pressurize
+	if (stim <  200) LEDG = 9'b0010_1001; else // Fail to pressurize (cover open)
+	if (stim <  250) LEDG = 9'b0011_1010; else // Pressurize to medium (cover leaky)
+	if (stim <  300) LEDG = 9'b0100_1100; else // Pressurize
+	if (stim <  350) LEDG = 9'b0101_1010; else // Leak to medium
+	if (stim <  400) LEDG = 9'b0110_0010; else // Leak to low
+	if (stim <  450) LEDG = 9'b0111_1100; else // Pressurize
+	if (stim <  500) LEDG = 9'b1000_1001; else // Explosive decompression
+	if (stim <  550) LEDG = 9'b1000_0000; else // 
+	                 LEDG = 9'b1000_0000;      // 
+
+assign X_pressurize   = LEDG[3];
+assign S_cover_closed = LEDG[2];
+assign S_cover_leaky  = LEDG[1];
+assign S_cover_opened = LEDG[0];
+

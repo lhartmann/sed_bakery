@@ -11,9 +11,8 @@ ASSIGNMENT_FILES = $(PROJECT).qpf $(PROJECT).qsf
 
 ###################################################################
 # Part, Family, Boardfile DE1 or DE2
-FAMILY = "Cyclone II"
-PART = EP2C35F672C6
-BOARDFILE = DE2Pins
+BOARD = DE2
+include $(BOARD).mk
 ###################################################################
 
 ###################################################################
@@ -32,16 +31,10 @@ SRCS = $(wildcard ../fpga/*.sv) \
 # program: program your device with the compiled design
 ###################################################################
 
-all: smart.log $(PROJECT).asm.rpt $(PROJECT).sta.rpt 
+all: $(PROJECT).svf
 
 clean:
-	$(RM) -rf *.rpt *.chg smart.log *.htm *.eqn *.pin *.sof *.pof db incremental_db *.summary *.smsg *.jdi $(ASSIGNMENT_FILES)
-
-map: smart.log $(PROJECT).map.rpt
-fit: smart.log $(PROJECT).fit.rpt
-asm: smart.log $(PROJECT).asm.rpt
-sta: smart.log $(PROJECT).sta.rpt
-smart: smart.log
+	$(RM) -rf *.rpt *.chg smart.log *.htm *.eqn *.pin *.sof *.pof db incremental_db *.summary *.smsg *.jdi *.qpf *.qsf *.svf *.qws
 
 ###################################################################
 # Executable Configuration
@@ -59,6 +52,7 @@ QUARTUS_ASM  = $(QUARTUS_PATH)quartus_asm
 QUARTUS_STA  = $(QUARTUS_PATH)quartus_sta
 QUARTUS_SH   = $(QUARTUS_PATH)quartus_sh
 QUARTUS_PGM  = $(QUARTUS_PATH)quartus_pgm
+QUARTUS_CPF  = $(QUARTUS_PATH)quartus_cpf
 
 ifeq ($(shell uname -m),x86_64)
 QUARTUS_ARGS = --64bit
@@ -70,46 +64,26 @@ ASM_ARGS = $(QUARTUS_ARGS)
 STA_ARGS = $(QUARTUS_ARGS)
 SH_ARGS  = $(QUARTUS_ARGS)
 PGM_ARGS = $(QUARTUS_ARGS) --no_banner --mode=jtag 
+CPF_ARGS = $(QUARTUS_ARGS) -c -q 10MHz -g 3.3V -n p
 
 ###################################################################
 # Target implementations
 ###################################################################
 
-STAMP = echo done >
-
-$(PROJECT).map.rpt: map.chg $(SOURCE_FILES) 
+$(PROJECT).sof: $(SOURCE_FILES) 
+	$(QUARTUS_SH) $(SH_ARGS) --prepare -f $(FAMILY) -t $(TOP_LEVEL_ENTITY) $(PROJECT)
+	-cat $(BOARD)Pins >> $(PROJECT).qsf
+	$(QUARTUS_SH) $(SH_ARGS) --determine_smart_action $(PROJECT) > smart.log
 	$(QUARTUS_MAP) $(MAP_ARGS) $(PROJECT)
-	$(STAMP) fit.chg
-
-$(PROJECT).fit.rpt: fit.chg $(PROJECT).map.rpt
 	$(QUARTUS_FIT) $(FIT_ARGS) $(PROJECT)
-	$(STAMP) asm.chg
-	$(STAMP) sta.chg
-
-$(PROJECT).asm.rpt: asm.chg $(PROJECT).fit.rpt
 	$(QUARTUS_ASM) $(ASM_ARGS) $(PROJECT)
-
-$(PROJECT).sta.rpt: sta.chg $(PROJECT).fit.rpt
 	$(QUARTUS_STA) $(STA_ARGS) $(PROJECT) 
 
-smart.log: $(ASSIGNMENT_FILES)
-	$(QUARTUS_SH) $(SH_ARGS) --determine_smart_action $(PROJECT) > smart.log
+$(PROJECT).pof: $(PROJECT).sof
+	# No extra commands required, built together.
 
-###################################################################
-# Project initialization
-###################################################################
-
-$(ASSIGNMENT_FILES):
-	$(QUARTUS_SH) $(SH_ARGS) --prepare -f $(FAMILY) -t $(TOP_LEVEL_ENTITY) $(PROJECT)
-	-cat $(BOARDFILE) >> $(PROJECT).qsf
-map.chg:
-	$(STAMP) map.chg
-fit.chg:
-	$(STAMP) fit.chg
-sta.chg:
-	$(STAMP) sta.chg
-asm.chg:
-	$(STAMP) asm.chg
+$(PROJECT).svf: $(PROJECT).sof
+	$(QUARTUS_CPF) $(CPF_ARGS) $(PROJECT).sof $(PROJECT).svf
 
 ###################################################################
 # Programming the device
@@ -120,3 +94,6 @@ program: $(PROJECT).sof
 
 program-pof: $(PROJECT).pof
 	$(QUARTUS_PGM) $(PGM_ARGS) -o "BVP;$(PROJECT).pof"
+
+program-svf: $(PROJECT).svf
+	openocd -f openocd-$(BOARD).cfg -c "svf $(PROJECT).svf" -c exit

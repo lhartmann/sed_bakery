@@ -1,0 +1,13 @@
+// Test add_sub_sat
+logic [17:0] LEDR_next;
+logic dir;
+add_sub_sat#(18)(LEDR_next, LEDR,
+	dir*5700, !dir*9900
+);
+always_ff @(posedge CLOCK_50)
+begin
+	if (r10hz) LEDR = LEDR_next;
+	
+	if (&LEDR || (&(~LEDR)))
+		dir = dir ^ r1hz;
+end

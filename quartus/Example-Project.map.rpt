@@ -1,0 +1,1089 @@
+Analysis & Synthesis report for Example-Project
+Mon Sep  4 15:29:18 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Logic Cells Representing Combinational Loops
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Every:comb_29
+ 14. Parameter Settings for User Entity Instance: Every:comb_30
+ 15. Parameter Settings for User Entity Instance: Every:comb_31
+ 16. Parameter Settings for User Entity Instance: Every:comb_32
+ 17. Parameter Settings for User Entity Instance: Bakery:comb_133|Cover:comb_3|add_sub_sat:comb_13
+ 18. Parameter Settings for User Entity Instance: Bakery:comb_133|Pressure:comb_4|add_sub_sat:comb_9
+ 19. Parameter Settings for User Entity Instance: Bakery:comb_133|Water:comb_5|add_sub_sat:comb_6
+ 20. Parameter Settings for User Entity Instance: Bakery:comb_133|Feeder:comb_7
+ 21. Parameter Settings for User Entity Instance: Bakery:comb_133|Feeder:comb_8
+ 22. Parameter Settings for User Entity Instance: Bakery:comb_133|BakingPan:comb_145|Every:comb_3
+ 23. Parameter Settings for User Entity Instance: Bakery:comb_133|BakingPan:comb_145|Every:comb_4
+ 24. Parameter Settings for User Entity Instance: Bakery:comb_133|BakingPan:comb_145|add_sub_sat:comb_140
+ 25. Port Connectivity Checks: "d7s:comb_150"
+ 26. Port Connectivity Checks: "d7s:comb_149"
+ 27. Port Connectivity Checks: "d7s:comb_148"
+ 28. Port Connectivity Checks: "Bakery:comb_133|BakingPan:comb_145|add_sub_sat:comb_140"
+ 29. Port Connectivity Checks: "Bakery:comb_133|Water:comb_5|add_sub_sat:comb_6"
+ 30. Port Connectivity Checks: "Bakery:comb_133|Pressure:comb_4|add_sub_sat:comb_9"
+ 31. Port Connectivity Checks: "Bakery:comb_133|Pressure:comb_4"
+ 32. Port Connectivity Checks: "Bakery:comb_133|Cover:comb_3|add_sub_sat:comb_13"
+ 33. Port Connectivity Checks: "Bakery:comb_133"
+ 34. Port Connectivity Checks: "Every:comb_32"
+ 35. Port Connectivity Checks: "Every:comb_29"
+ 36. Elapsed Time Per Partition
+ 37. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Sep  4 15:29:18 2023           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Example-Project                                 ;
+; Top-level Entity Name              ; top_level                                       ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 415                                             ;
+;     Total combinational functions  ; 401                                             ;
+;     Dedicated logic registers      ; 165                                             ;
+; Total registers                    ; 165                                             ;
+; Total pins                         ; 425                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; top_level          ; Example-Project    ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
+; ../fpga/add_sub_sat.sv           ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/add_sub_sat.sv ;         ;
+; ../fpga/bakery.sv                ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/bakery.sv      ;         ;
+; ../fpga/baking_pan.sv            ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/baking_pan.sv  ;         ;
+; ../fpga/cover.sv                 ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/cover.sv       ;         ;
+; ../fpga/d7s.sv                   ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/d7s.sv         ;         ;
+; ../fpga/every.sv                 ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/every.sv       ;         ;
+; ../fpga/feeder.sv                ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/feeder.sv      ;         ;
+; ../fpga/pressure.sv              ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/pressure.sv    ;         ;
+; ../fpga/top_level.sv             ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/top_level.sv   ;         ;
+; ../fpga/water.sv                 ; yes             ; User SystemVerilog HDL File  ; /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/water.sv       ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 415      ;
+;                                             ;          ;
+; Total combinational functions               ; 401      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 133      ;
+;     -- 3 input functions                    ; 115      ;
+;     -- <=2 input functions                  ; 153      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 241      ;
+;     -- arithmetic mode                      ; 160      ;
+;                                             ;          ;
+; Total registers                             ; 165      ;
+;     -- Dedicated logic registers            ; 165      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 425      ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 165      ;
+; Total fan-out                               ; 1771     ;
+; Average fan-out                             ; 1.79     ;
++---------------------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                             ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Library Name ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
+; |top_level                      ; 401 (10)          ; 165 (1)      ; 0           ; 0            ; 0       ; 0         ; 425  ; 0            ; |top_level                                                         ; work         ;
+;    |Bakery:comb_133|            ; 329 (45)          ; 141 (16)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133                                         ; work         ;
+;       |BakingPan:comb_145|      ; 58 (37)           ; 46 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|BakingPan:comb_145                      ; work         ;
+;          |Every:comb_3|         ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|BakingPan:comb_145|Every:comb_3         ; work         ;
+;          |Every:comb_4|         ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|BakingPan:comb_145|Every:comb_4         ; work         ;
+;          |add_sub_sat:comb_140| ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|BakingPan:comb_145|add_sub_sat:comb_140 ; work         ;
+;       |Cover:comb_3|            ; 53 (3)            ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|Cover:comb_3                            ; work         ;
+;          |add_sub_sat:comb_13|  ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|Cover:comb_3|add_sub_sat:comb_13        ; work         ;
+;       |Feeder:comb_7|           ; 30 (30)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|Feeder:comb_7                           ; work         ;
+;       |Feeder:comb_8|           ; 28 (28)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|Feeder:comb_8                           ; work         ;
+;       |Pressure:comb_4|         ; 55 (21)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|Pressure:comb_4                         ; work         ;
+;          |add_sub_sat:comb_9|   ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|Pressure:comb_4|add_sub_sat:comb_9      ; work         ;
+;       |Water:comb_5|            ; 60 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|Water:comb_5                            ; work         ;
+;          |add_sub_sat:comb_6|   ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Bakery:comb_133|Water:comb_5|add_sub_sat:comb_6         ; work         ;
+;    |Every:comb_29|              ; 28 (28)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Every:comb_29                                           ; work         ;
+;    |Every:comb_30|              ; 13 (13)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|Every:comb_30                                           ; work         ;
+;    |d7s:comb_148|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|d7s:comb_148                                            ; work         ;
+;    |d7s:comb_149|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|d7s:comb_149                                            ; work         ;
+;    |d7s:comb_150|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|d7s:comb_150                                            ; work         ;
++---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; Bakery:comb_133|Y_water_base~1                         ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                      ;
++--------------------------------------------------------+----------------------------------------------------------------+
+; Register name                                          ; Reason for Removal                                             ;
++--------------------------------------------------------+----------------------------------------------------------------+
+; Bakery:comb_133|ds[3]                                  ; Stuck at GND due to stuck port data_in                         ;
+; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[0]     ; Merged with Bakery:comb_133|BakingPan:comb_145|S_pan_weight[1] ;
+; Bakery:comb_133|Water:comb_5|S_water[0]                ; Merged with Bakery:comb_133|Water:comb_5|S_water[1]            ;
+; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[0] ; Merged with t10                                                ;
+; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[1]     ; Lost fanout                                                    ;
+; Total Number of Removed Registers = 5                  ;                                                                ;
++--------------------------------------------------------+----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 165   ;
+; Number of registers using Synchronous Clear  ; 30    ;
+; Number of registers using Synchronous Load   ; 27    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 144   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------+
+; Inverted Register Statistics                          ;
++---------------------------------------------+---------+
+; Inverted Register                           ; Fan out ;
++---------------------------------------------+---------+
+; Bakery:comb_133|BakingPan:comb_145|prbs[0]  ; 4       ;
+; Bakery:comb_133|BakingPan:comb_145|prbs[2]  ; 1       ;
+; Bakery:comb_133|BakingPan:comb_145|prbs[4]  ; 1       ;
+; Bakery:comb_133|BakingPan:comb_145|prbs[5]  ; 1       ;
+; Bakery:comb_133|BakingPan:comb_145|prbs[9]  ; 1       ;
+; Bakery:comb_133|BakingPan:comb_145|prbs[12] ; 1       ;
+; Total number of inverted registers = 6      ;         ;
++---------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top_level|Bakery:comb_133|Feeder:comb_7|ref_delay[2]          ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top_level|Bakery:comb_133|Feeder:comb_8|ref_delay[6]          ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |top_level|Bakery:comb_133|BakingPan:comb_145|S_pan_weight[10] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |top_level|Bakery:comb_133|Pressure:comb_4|S_pressure[12]      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top_level|Bakery:comb_133|Feeder:comb_7|ctr[3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level|Bakery:comb_133|Feeder:comb_8|ctr[3]                ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |top_level|Bakery:comb_133|ds[0]                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Every:comb_29 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; period         ; 50000 ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Every:comb_30 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; period         ; 100   ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Every:comb_31 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; period         ; 5     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Every:comb_32 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; period         ; 2     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bakery:comb_133|Cover:comb_3|add_sub_sat:comb_13 ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bakery:comb_133|Pressure:comb_4|add_sub_sat:comb_9 ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bakery:comb_133|Water:comb_5|add_sub_sat:comb_6 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bakery:comb_133|Feeder:comb_7 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; period         ; 20    ; Signed Integer                                    ;
+; portions       ; 25    ; Signed Integer                                    ;
+; refill         ; 100   ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bakery:comb_133|Feeder:comb_8 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; period         ; 15    ; Signed Integer                                    ;
+; portions       ; 10    ; Signed Integer                                    ;
+; refill         ; 100   ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bakery:comb_133|BakingPan:comb_145|Every:comb_3 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; period         ; 3     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bakery:comb_133|BakingPan:comb_145|Every:comb_4 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; period         ; 10    ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Bakery:comb_133|BakingPan:comb_145|add_sub_sat:comb_140 ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "d7s:comb_150"                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; en     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; en[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "d7s:comb_149"                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; en     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; en[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "d7s:comb_148"                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; en     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; en[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Bakery:comb_133|BakingPan:comb_145|add_sub_sat:comb_140"                                                                                                                                  ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ADD         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ADD[15..12] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; SUB         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; SUB[15..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Bakery:comb_133|Water:comb_5|add_sub_sat:comb_6"                                                                                                                                          ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ADD         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ADD[15..12] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; SUB         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; SUB[15..12] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Bakery:comb_133|Pressure:comb_4|add_sub_sat:comb_9"                                                                                                                                       ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ADD         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ADD[15..13] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; SUB         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; SUB[15..13] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Bakery:comb_133|Pressure:comb_4"                                                              ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; S_pressure_low ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Bakery:comb_133|Cover:comb_3|add_sub_sat:comb_13"                                                                                                                                         ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                             ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ADD         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ADD[15..13] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; SUB         ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; SUB[15..13] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Bakery:comb_133"                                                                                 ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; S_water           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; S_pressure[11..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; S_cover           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; S_cover_opened    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Every:comb_32"                                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Every:comb_29"                                                                                                                                                                      ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; en     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; en[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Mon Sep  4 15:29:16 2023
+Info: Command: quartus_map --read_settings_files=on --source=../fpga/add_sub_sat.sv --source=../fpga/bakery.sv --source=../fpga/baking_pan.sv --source=../fpga/conveyor.sv --source=../fpga/cover.sv --source=../fpga/d7s.sv --source=../fpga/every.sv --source=../fpga/feeder.sv --source=../fpga/pressure.sv --source=../fpga/top_level.sv --source=../fpga/water.sv Example-Project
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/add_sub_sat.sv
+    Info (12023): Found entity 1: add_sub_sat
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/bakery.sv
+    Info (12023): Found entity 1: Bakery
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/baking_pan.sv
+    Info (12023): Found entity 1: BakingPan
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/conveyor.sv
+    Info (12023): Found entity 1: Conveyor
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/cover.sv
+    Info (12023): Found entity 1: Cover
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/d7s.sv
+    Info (12023): Found entity 1: d7s
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/every.sv
+    Info (12023): Found entity 1: Every
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/feeder.sv
+    Info (12023): Found entity 1: Feeder
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/pressure.sv
+    Info (12023): Found entity 1: Pressure
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/top_level.sv
+    Info (12023): Found entity 1: top_level
+Info (12021): Found 1 design units, including 1 entities, in source file /home/lucas.hartmann/Documentos/UFPB/Disciplinas/2023.1 - Sistemas a Eventos Discretos/FPGA_OpenPLC_Emulator/fpga/water.sv
+    Info (12023): Found entity 1: Water
+Critical Warning (10846): Verilog HDL Instantiation warning at cover.sv(27): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at bakery.sv(36): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at pressure.sv(18): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at bakery.sv(40): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at water.sv(19): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at bakery.sv(44): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at bakery.sv(49): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at bakery.sv(50): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at baking_pan.sv(15): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at baking_pan.sv(16): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at baking_pan.sv(41): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at bakery.sv(89): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.sv(150): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.sv(151): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.sv(152): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.sv(153): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.sv(224): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.sv(238): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.sv(241): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at top_level.sv(244): instance has no name
+Info (12127): Elaborating entity "top_level" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at top_level.sv(145): object "QW0" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at top_level.sv(165): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at top_level.sv(251): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at top_level.sv(252): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at top_level.sv(253): truncated value with size 32 to match size of target (7)
+Warning (10030): Net "IX0[7..6]" at top_level.sv(110) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "IX1[5..3]" at top_level.sv(120) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "DRAM_ADDR" at top_level.sv(10) has no driver
+Warning (10034): Output port "LEDG[8]" at top_level.sv(58) has no driver
+Warning (10034): Output port "LEDG[1..0]" at top_level.sv(58) has no driver
+Warning (10034): Output port "LEDR[15..12]" at top_level.sv(59) has no driver
+Warning (10034): Output port "LEDR[4..0]" at top_level.sv(59) has no driver
+Warning (10034): Output port "SRAM_ADDR" at top_level.sv(80) has no driver
+Warning (10034): Output port "VGA_B" at top_level.sv(98) has no driver
+Warning (10034): Output port "VGA_G" at top_level.sv(101) has no driver
+Warning (10034): Output port "VGA_R" at top_level.sv(103) has no driver
+Warning (10034): Output port "IRDA_TXD" at top_level.sv(50) has no driver
+Warning (10034): Output port "UART_TXD" at top_level.sv(97) has no driver
+Warning (10034): Output port "VGA_BLANK" at top_level.sv(99) has no driver
+Warning (10034): Output port "VGA_CLK" at top_level.sv(100) has no driver
+Warning (10034): Output port "VGA_HS" at top_level.sv(102) has no driver
+Warning (10034): Output port "VGA_SYNC" at top_level.sv(104) has no driver
+Warning (10034): Output port "VGA_VS" at top_level.sv(106) has no driver
+Info (12128): Elaborating entity "Every" for hierarchy "Every:comb_29"
+Warning (10230): Verilog HDL assignment warning at every.sv(10): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "Every" for hierarchy "Every:comb_30"
+Warning (10230): Verilog HDL assignment warning at every.sv(10): truncated value with size 32 to match size of target (7)
+Info (12128): Elaborating entity "Every" for hierarchy "Every:comb_31"
+Warning (10230): Verilog HDL assignment warning at every.sv(10): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "Every" for hierarchy "Every:comb_32"
+Warning (10230): Verilog HDL assignment warning at every.sv(10): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "Bakery" for hierarchy "Bakery:comb_133"
+Warning (10755): Verilog HDL warning at bakery.sv(61): assignments to dirty_water_base create a combinational loop
+Warning (10230): Verilog HDL assignment warning at bakery.sv(70): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at bakery.sv(74): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "Cover" for hierarchy "Bakery:comb_133|Cover:comb_3"
+Warning (10230): Verilog HDL assignment warning at cover.sv(22): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "add_sub_sat" for hierarchy "Bakery:comb_133|Cover:comb_3|add_sub_sat:comb_13"
+Warning (10230): Verilog HDL assignment warning at add_sub_sat.sv(13): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "Pressure" for hierarchy "Bakery:comb_133|Pressure:comb_4"
+Warning (10230): Verilog HDL assignment warning at pressure.sv(21): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "Water" for hierarchy "Bakery:comb_133|Water:comb_5"
+Info (12128): Elaborating entity "Feeder" for hierarchy "Bakery:comb_133|Feeder:comb_7"
+Warning (10230): Verilog HDL assignment warning at feeder.sv(29): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at feeder.sv(32): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at feeder.sv(35): truncated value with size 32 to match size of target (7)
+Info (12128): Elaborating entity "Feeder" for hierarchy "Bakery:comb_133|Feeder:comb_8"
+Warning (10230): Verilog HDL assignment warning at feeder.sv(29): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at feeder.sv(32): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at feeder.sv(35): truncated value with size 32 to match size of target (7)
+Info (12128): Elaborating entity "BakingPan" for hierarchy "Bakery:comb_133|BakingPan:comb_145"
+Warning (10230): Verilog HDL assignment warning at baking_pan.sv(44): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "Every" for hierarchy "Bakery:comb_133|BakingPan:comb_145|Every:comb_3"
+Warning (10230): Verilog HDL assignment warning at every.sv(10): truncated value with size 32 to match size of target (2)
+Info (12128): Elaborating entity "Every" for hierarchy "Bakery:comb_133|BakingPan:comb_145|Every:comb_4"
+Warning (10230): Verilog HDL assignment warning at every.sv(10): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "d7s" for hierarchy "d7s:comb_148"
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[6]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[8]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[12]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[18]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[20]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[22]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[24]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[26]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_1[27]" and its non-tri-state driver.
+Warning (13039): The following bidir pins have no drivers
+    Warning (13040): Bidir "GPIO_1[1]" has no driver
+    Warning (13040): Bidir "GPIO_1[3]" has no driver
+    Warning (13040): Bidir "GPIO_1[5]" has no driver
+    Warning (13040): Bidir "GPIO_1[11]" has no driver
+    Warning (13040): Bidir "GPIO_1[15]" has no driver
+    Warning (13040): Bidir "GPIO_1[17]" has no driver
+    Warning (13040): Bidir "GPIO_1[19]" has no driver
+    Warning (13040): Bidir "GPIO_1[23]" has no driver
+    Warning (13040): Bidir "GPIO_1[25]" has no driver
+    Warning (13040): Bidir "AUD_ADCDAT" has no driver
+    Warning (13040): Bidir "AUD_ADCLRCK" has no driver
+    Warning (13040): Bidir "AUD_BCLK" has no driver
+    Warning (13040): Bidir "AUD_DACDAT" has no driver
+    Warning (13040): Bidir "AUD_DACLRCK" has no driver
+    Warning (13040): Bidir "AUD_XCK" has no driver
+    Warning (13040): Bidir "DRAM_BA_0" has no driver
+    Warning (13040): Bidir "DRAM_BA_1" has no driver
+    Warning (13040): Bidir "DRAM_CAS_N" has no driver
+    Warning (13040): Bidir "DRAM_CKE" has no driver
+    Warning (13040): Bidir "DRAM_CLK" has no driver
+    Warning (13040): Bidir "DRAM_CS_N" has no driver
+    Warning (13040): Bidir "DRAM_DQ[0]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[1]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[2]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[3]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[4]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[5]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[6]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[7]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[8]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[9]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[10]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[11]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[12]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[13]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[14]" has no driver
+    Warning (13040): Bidir "DRAM_DQ[15]" has no driver
+    Warning (13040): Bidir "DRAM_LDQM" has no driver
+    Warning (13040): Bidir "DRAM_RAS_N" has no driver
+    Warning (13040): Bidir "DRAM_UDQM" has no driver
+    Warning (13040): Bidir "DRAM_WE_N" has no driver
+    Warning (13040): Bidir "ENET_CLK" has no driver
+    Warning (13040): Bidir "ENET_CMD" has no driver
+    Warning (13040): Bidir "ENET_CS_N" has no driver
+    Warning (13040): Bidir "ENET_DATA[0]" has no driver
+    Warning (13040): Bidir "ENET_DATA[1]" has no driver
+    Warning (13040): Bidir "ENET_DATA[2]" has no driver
+    Warning (13040): Bidir "ENET_DATA[3]" has no driver
+    Warning (13040): Bidir "ENET_DATA[4]" has no driver
+    Warning (13040): Bidir "ENET_DATA[5]" has no driver
+    Warning (13040): Bidir "ENET_DATA[6]" has no driver
+    Warning (13040): Bidir "ENET_DATA[7]" has no driver
+    Warning (13040): Bidir "ENET_DATA[8]" has no driver
+    Warning (13040): Bidir "ENET_DATA[9]" has no driver
+    Warning (13040): Bidir "ENET_DATA[10]" has no driver
+    Warning (13040): Bidir "ENET_DATA[11]" has no driver
+    Warning (13040): Bidir "ENET_DATA[12]" has no driver
+    Warning (13040): Bidir "ENET_DATA[13]" has no driver
+    Warning (13040): Bidir "ENET_DATA[14]" has no driver
+    Warning (13040): Bidir "ENET_DATA[15]" has no driver
+    Warning (13040): Bidir "ENET_INT" has no driver
+    Warning (13040): Bidir "ENET_RD_N" has no driver
+    Warning (13040): Bidir "ENET_RST_N" has no driver
+    Warning (13040): Bidir "ENET_WR_N" has no driver
+    Warning (13040): Bidir "FL_ADDR[0]" has no driver
+    Warning (13040): Bidir "FL_ADDR[1]" has no driver
+    Warning (13040): Bidir "FL_ADDR[2]" has no driver
+    Warning (13040): Bidir "FL_ADDR[3]" has no driver
+    Warning (13040): Bidir "FL_ADDR[4]" has no driver
+    Warning (13040): Bidir "FL_ADDR[5]" has no driver
+    Warning (13040): Bidir "FL_ADDR[6]" has no driver
+    Warning (13040): Bidir "FL_ADDR[7]" has no driver
+    Warning (13040): Bidir "FL_ADDR[8]" has no driver
+    Warning (13040): Bidir "FL_ADDR[9]" has no driver
+    Warning (13040): Bidir "FL_ADDR[10]" has no driver
+    Warning (13040): Bidir "FL_ADDR[11]" has no driver
+    Warning (13040): Bidir "FL_ADDR[12]" has no driver
+    Warning (13040): Bidir "FL_ADDR[13]" has no driver
+    Warning (13040): Bidir "FL_ADDR[14]" has no driver
+    Warning (13040): Bidir "FL_ADDR[15]" has no driver
+    Warning (13040): Bidir "FL_ADDR[16]" has no driver
+    Warning (13040): Bidir "FL_ADDR[17]" has no driver
+    Warning (13040): Bidir "FL_ADDR[18]" has no driver
+    Warning (13040): Bidir "FL_ADDR[19]" has no driver
+    Warning (13040): Bidir "FL_ADDR[20]" has no driver
+    Warning (13040): Bidir "FL_ADDR[21]" has no driver
+    Warning (13040): Bidir "FL_CE_N" has no driver
+    Warning (13040): Bidir "FL_DQ[0]" has no driver
+    Warning (13040): Bidir "FL_DQ[1]" has no driver
+    Warning (13040): Bidir "FL_DQ[2]" has no driver
+    Warning (13040): Bidir "FL_DQ[3]" has no driver
+    Warning (13040): Bidir "FL_DQ[4]" has no driver
+    Warning (13040): Bidir "FL_DQ[5]" has no driver
+    Warning (13040): Bidir "FL_DQ[6]" has no driver
+    Warning (13040): Bidir "FL_DQ[7]" has no driver
+    Warning (13040): Bidir "FL_OE_N" has no driver
+    Warning (13040): Bidir "FL_RST_N" has no driver
+    Warning (13040): Bidir "FL_WE_N" has no driver
+    Warning (13040): Bidir "GPIO_0[0]" has no driver
+    Warning (13040): Bidir "GPIO_0[1]" has no driver
+    Warning (13040): Bidir "GPIO_0[2]" has no driver
+    Warning (13040): Bidir "GPIO_0[3]" has no driver
+    Warning (13040): Bidir "GPIO_0[4]" has no driver
+    Warning (13040): Bidir "GPIO_0[5]" has no driver
+    Warning (13040): Bidir "GPIO_0[6]" has no driver
+    Warning (13040): Bidir "GPIO_0[7]" has no driver
+    Warning (13040): Bidir "GPIO_0[8]" has no driver
+    Warning (13040): Bidir "GPIO_0[9]" has no driver
+    Warning (13040): Bidir "GPIO_0[10]" has no driver
+    Warning (13040): Bidir "GPIO_0[11]" has no driver
+    Warning (13040): Bidir "GPIO_0[12]" has no driver
+    Warning (13040): Bidir "GPIO_0[13]" has no driver
+    Warning (13040): Bidir "GPIO_0[14]" has no driver
+    Warning (13040): Bidir "GPIO_0[15]" has no driver
+    Warning (13040): Bidir "GPIO_0[16]" has no driver
+    Warning (13040): Bidir "GPIO_0[17]" has no driver
+    Warning (13040): Bidir "GPIO_0[18]" has no driver
+    Warning (13040): Bidir "GPIO_0[19]" has no driver
+    Warning (13040): Bidir "GPIO_0[20]" has no driver
+    Warning (13040): Bidir "GPIO_0[21]" has no driver
+    Warning (13040): Bidir "GPIO_0[22]" has no driver
+    Warning (13040): Bidir "GPIO_0[23]" has no driver
+    Warning (13040): Bidir "GPIO_0[24]" has no driver
+    Warning (13040): Bidir "GPIO_0[25]" has no driver
+    Warning (13040): Bidir "GPIO_0[26]" has no driver
+    Warning (13040): Bidir "GPIO_0[27]" has no driver
+    Warning (13040): Bidir "GPIO_0[28]" has no driver
+    Warning (13040): Bidir "GPIO_0[29]" has no driver
+    Warning (13040): Bidir "GPIO_0[30]" has no driver
+    Warning (13040): Bidir "GPIO_0[31]" has no driver
+    Warning (13040): Bidir "GPIO_0[32]" has no driver
+    Warning (13040): Bidir "GPIO_0[33]" has no driver
+    Warning (13040): Bidir "GPIO_0[34]" has no driver
+    Warning (13040): Bidir "GPIO_0[35]" has no driver
+    Warning (13040): Bidir "GPIO_1[7]" has no driver
+    Warning (13040): Bidir "GPIO_1[9]" has no driver
+    Warning (13040): Bidir "GPIO_1[10]" has no driver
+    Warning (13040): Bidir "GPIO_1[13]" has no driver
+    Warning (13040): Bidir "GPIO_1[21]" has no driver
+    Warning (13040): Bidir "GPIO_1[28]" has no driver
+    Warning (13040): Bidir "GPIO_1[29]" has no driver
+    Warning (13040): Bidir "GPIO_1[30]" has no driver
+    Warning (13040): Bidir "GPIO_1[31]" has no driver
+    Warning (13040): Bidir "GPIO_1[32]" has no driver
+    Warning (13040): Bidir "GPIO_1[33]" has no driver
+    Warning (13040): Bidir "GPIO_1[34]" has no driver
+    Warning (13040): Bidir "GPIO_1[35]" has no driver
+    Warning (13040): Bidir "I2C_SCLK" has no driver
+    Warning (13040): Bidir "I2C_SDAT" has no driver
+    Warning (13040): Bidir "LCD_BLON" has no driver
+    Warning (13040): Bidir "LCD_DATA[0]" has no driver
+    Warning (13040): Bidir "LCD_DATA[1]" has no driver
+    Warning (13040): Bidir "LCD_DATA[2]" has no driver
+    Warning (13040): Bidir "LCD_DATA[3]" has no driver
+    Warning (13040): Bidir "LCD_DATA[4]" has no driver
+    Warning (13040): Bidir "LCD_DATA[5]" has no driver
+    Warning (13040): Bidir "LCD_DATA[6]" has no driver
+    Warning (13040): Bidir "LCD_DATA[7]" has no driver
+    Warning (13040): Bidir "LCD_EN" has no driver
+    Warning (13040): Bidir "LCD_ON" has no driver
+    Warning (13040): Bidir "LCD_RS" has no driver
+    Warning (13040): Bidir "LCD_RW" has no driver
+    Warning (13040): Bidir "OTG_ADDR[0]" has no driver
+    Warning (13040): Bidir "OTG_ADDR[1]" has no driver
+    Warning (13040): Bidir "OTG_CS_N" has no driver
+    Warning (13040): Bidir "OTG_DACK0_N" has no driver
+    Warning (13040): Bidir "OTG_DACK1_N" has no driver
+    Warning (13040): Bidir "OTG_DATA[0]" has no driver
+    Warning (13040): Bidir "OTG_DATA[1]" has no driver
+    Warning (13040): Bidir "OTG_DATA[2]" has no driver
+    Warning (13040): Bidir "OTG_DATA[3]" has no driver
+    Warning (13040): Bidir "OTG_DATA[4]" has no driver
+    Warning (13040): Bidir "OTG_DATA[5]" has no driver
+    Warning (13040): Bidir "OTG_DATA[6]" has no driver
+    Warning (13040): Bidir "OTG_DATA[7]" has no driver
+    Warning (13040): Bidir "OTG_DATA[8]" has no driver
+    Warning (13040): Bidir "OTG_DATA[9]" has no driver
+    Warning (13040): Bidir "OTG_DATA[10]" has no driver
+    Warning (13040): Bidir "OTG_DATA[11]" has no driver
+    Warning (13040): Bidir "OTG_DATA[12]" has no driver
+    Warning (13040): Bidir "OTG_DATA[13]" has no driver
+    Warning (13040): Bidir "OTG_DATA[14]" has no driver
+    Warning (13040): Bidir "OTG_DATA[15]" has no driver
+    Warning (13040): Bidir "OTG_DREQ0" has no driver
+    Warning (13040): Bidir "OTG_DREQ1" has no driver
+    Warning (13040): Bidir "OTG_FSPEED" has no driver
+    Warning (13040): Bidir "OTG_INT0" has no driver
+    Warning (13040): Bidir "OTG_INT1" has no driver
+    Warning (13040): Bidir "OTG_LSPEED" has no driver
+    Warning (13040): Bidir "OTG_RD_N" has no driver
+    Warning (13040): Bidir "OTG_RST_N" has no driver
+    Warning (13040): Bidir "OTG_WR_N" has no driver
+    Warning (13040): Bidir "PS2_CLK" has no driver
+    Warning (13040): Bidir "PS2_DAT" has no driver
+    Warning (13040): Bidir "SD_CLK" has no driver
+    Warning (13040): Bidir "SD_CMD" has no driver
+    Warning (13040): Bidir "SD_DAT" has no driver
+    Warning (13040): Bidir "SD_DAT3" has no driver
+    Warning (13040): Bidir "SRAM_CE_N" has no driver
+    Warning (13040): Bidir "SRAM_DQ[0]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[1]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[2]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[3]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[4]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[5]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[6]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[7]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[8]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[9]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[10]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[11]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[12]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[13]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[14]" has no driver
+    Warning (13040): Bidir "SRAM_DQ[15]" has no driver
+    Warning (13040): Bidir "SRAM_LB_N" has no driver
+    Warning (13040): Bidir "SRAM_OE_N" has no driver
+    Warning (13040): Bidir "SRAM_UB_N" has no driver
+    Warning (13040): Bidir "SRAM_WE_N" has no driver
+    Warning (13040): Bidir "TCK" has no driver
+    Warning (13040): Bidir "TCS" has no driver
+    Warning (13040): Bidir "TD_DATA[0]" has no driver
+    Warning (13040): Bidir "TD_DATA[1]" has no driver
+    Warning (13040): Bidir "TD_DATA[2]" has no driver
+    Warning (13040): Bidir "TD_DATA[3]" has no driver
+    Warning (13040): Bidir "TD_DATA[4]" has no driver
+    Warning (13040): Bidir "TD_DATA[5]" has no driver
+    Warning (13040): Bidir "TD_DATA[6]" has no driver
+    Warning (13040): Bidir "TD_DATA[7]" has no driver
+    Warning (13040): Bidir "TD_HS" has no driver
+    Warning (13040): Bidir "TDI" has no driver
+    Warning (13040): Bidir "TDO" has no driver
+    Warning (13040): Bidir "TD_RESET" has no driver
+    Warning (13040): Bidir "TD_VS" has no driver
+    Warning (13040): Bidir "UART_RXD" has no driver
+Warning (13032): The following tri-state nodes are fed by constants
+    Warning (13033): The pin "GPIO_1[0]" is fed by GND
+    Warning (13033): The pin "GPIO_1[2]" is fed by GND
+    Warning (13033): The pin "GPIO_1[4]" is fed by GND
+    Warning (13033): The pin "GPIO_1[14]" is fed by GND
+    Warning (13033): The pin "GPIO_1[16]" is fed by GND
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO_1[6]~synth"
+    Warning (13010): Node "GPIO_1[8]~synth"
+    Warning (13010): Node "GPIO_1[12]~synth"
+    Warning (13010): Node "GPIO_1[18]~synth"
+    Warning (13010): Node "GPIO_1[20]~synth"
+    Warning (13010): Node "GPIO_1[22]~synth"
+    Warning (13010): Node "GPIO_1[24]~synth"
+    Warning (13010): Node "GPIO_1[26]~synth"
+    Warning (13010): Node "GPIO_1[27]~synth"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC
+    Warning (13410): Pin "IRDA_TXD" is stuck at GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[0]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[1]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[2]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[3]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[4]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[5]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[6]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[7]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[8]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[9]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[10]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[11]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[12]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[13]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[14]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[15]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[16]" is stuck at GND
+    Warning (13410): Pin "SRAM_ADDR[17]" is stuck at GND
+    Warning (13410): Pin "UART_TXD" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND
+    Warning (13410): Pin "VGA_B[6]" is stuck at GND
+    Warning (13410): Pin "VGA_B[7]" is stuck at GND
+    Warning (13410): Pin "VGA_B[8]" is stuck at GND
+    Warning (13410): Pin "VGA_B[9]" is stuck at GND
+    Warning (13410): Pin "VGA_BLANK" is stuck at GND
+    Warning (13410): Pin "VGA_CLK" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND
+    Warning (13410): Pin "VGA_G[5]" is stuck at GND
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND
+    Warning (13410): Pin "VGA_G[7]" is stuck at GND
+    Warning (13410): Pin "VGA_G[8]" is stuck at GND
+    Warning (13410): Pin "VGA_G[9]" is stuck at GND
+    Warning (13410): Pin "VGA_HS" is stuck at GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND
+    Warning (13410): Pin "VGA_R[5]" is stuck at GND
+    Warning (13410): Pin "VGA_R[6]" is stuck at GND
+    Warning (13410): Pin "VGA_R[7]" is stuck at GND
+    Warning (13410): Pin "VGA_R[8]" is stuck at GND
+    Warning (13410): Pin "VGA_R[9]" is stuck at GND
+    Warning (13410): Pin "VGA_SYNC" is stuck at GND
+    Warning (13410): Pin "VGA_VS" is stuck at GND
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_27"
+    Warning (15610): No output dependent on input pin "EXT_CLOCK"
+    Warning (15610): No output dependent on input pin "IRDA_RXD"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+Info (21057): Implemented 840 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 26 input pins
+    Info (21059): Implemented 150 output pins
+    Info (21060): Implemented 249 bidirectional pins
+    Info (21061): Implemented 415 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 436 warnings
+    Info: Peak virtual memory: 584 megabytes
+    Info: Processing ended: Mon Sep  4 15:29:18 2023
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

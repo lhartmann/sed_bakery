@@ -1,0 +1,10 @@
+assign LEDR = SW;
+assign LEDG = {3{KEY}};
+d7s(1, SW[3:0], HEX7);
+d7s(1, SW[3:0], HEX6);
+d7s(1, SW[3:0], HEX5);
+d7s(1, SW[3:0], HEX4);
+d7s(1, SW[3:0], HEX3);
+d7s(1, SW[3:0], HEX2);
+d7s(1, SW[3:0], HEX1);
+d7s(1, SW[3:0], HEX0);

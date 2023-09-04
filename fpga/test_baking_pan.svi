@@ -1,0 +1,19 @@
+
+BakingPan(.clk(CLOCK_50), .en(r10), .*);
+
+always_comb //                    CcDP
+	if (stim <  100) LEDG = 9'b0000_1001; else // Feed forcibly
+	if (stim <  150) LEDG = 9'b0001_0101; else // Feed until pan
+	if (stim <  200) LEDG = 9'b0010_0011; else // Dispense
+	if (stim <  250) LEDG = 9'b0011_1101; else // Feed untill no pan
+	if (stim <  300) LEDG = 9'b0100_0100; else // Feed until pan
+	if (stim <  350) LEDG = 9'b0101_0010; else // Fail dispense (not pressurized)
+	if (stim <  400) LEDG = 9'b0110_0011; else // Dispense
+	if (stim <  450) LEDG = 9'b0111_1000; else // Feed
+	if (stim <  500) LEDG = 9'b1000_1000; else // Feed
+	if (stim <  550) LEDG = 9'b1000_1000; else // Feed
+	                 LEDG = 9'b1000_1000;      // Feed
+                 
+assign X_pan_conveyor  = LEDG[3] ^ (LEDG[2] && !Y_pan);
+assign X_dispenser     = LEDG[1];
+assign S_pressure_high = LEDG[0];

@@ -1,0 +1,29 @@
+// Cover test
+logic X_cover;
+logic S_pressure_medium;
+
+logic [15:0] S_cover;
+logic S_cover_closed;
+logic S_cover_leaky;
+logic S_cover_opened;
+logic S_cover_fully_opened;
+
+Cover(.clk(CLOCK_50), .en(r10), .*);
+
+always_comb //                    X HM
+	if (stim <  100) LEDG = 9'b0000_0000; else // Open
+	if (stim <  150) LEDG = 9'b0001_0001; else // Stay open
+	if (stim <  200) LEDG = 9'b0010_0011; else // Close by high pressure
+	if (stim <  250) LEDG = 9'b0011_0000; else // Open
+	if (stim <  300) LEDG = 9'b0100_1000; else // Close partially (time limited)
+	if (stim <  320) LEDG = 9'b0101_0001; else // Close by medium pressure
+	if (stim <  400) LEDG = 9'b0110_0000; else // Open
+	if (stim <  450) LEDG = 9'b0111_0000; else // 
+	if (stim <  500) LEDG = 9'b1000_1000; else // Close
+	if (stim <  550) LEDG = 9'b1000_0000; else // 
+	                 LEDG = 9'b1000_0000;      // 
+
+assign X_cover           = LEDG[3];
+assign S_pressure_high   = LEDG[1];
+assign S_pressure_medium = LEDG[0];
+

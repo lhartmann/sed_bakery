@@ -1,0 +1,29 @@
+	// Conveyor belt
+	logic [17:0] conveyor;
+	Conveyor#(18)(CLOCK_50, r10hz && QX0[0], conveyor);
+	
+	// LFSR test
+	//initial LEDG = 1;
+	//always_ff @(posedge CLOCK_50)
+		//if (pulse_1hz)
+			//LEDG = (LEDG >> 1) ^ (8'hA1 * LEDG[0]);
+		
+	// Boxes
+	logic [7:0] boxes;
+	logic [7:0] boxes_move;
+	logic [3:0] boxes_new_ctr;
+	logic boxes_drop;
+	initial boxes_drop = 0;
+	always_ff @(posedge CLOCK_50)
+		if (r1hz && QX0[0])
+		begin
+			boxes_new_ctr <= boxes_new_ctr ? boxes_new_ctr - 1 : 9 + 6*boxes_drop;
+			
+			if (boxes == 8'h00) boxes_drop = 0;
+			if (boxes == 8'hFF) boxes_drop = 1;
+			
+			boxes_move[7]   = boxes[7] & boxes_drop;
+			boxes_move[6:0] = boxes[6:0] & ~boxes[7:1];
+			
+			boxes <= boxes & ~boxes_move | (boxes_move<<1) | !boxes_new_ctr;	
+		end

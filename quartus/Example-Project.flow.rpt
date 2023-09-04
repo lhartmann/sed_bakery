@@ -1,0 +1,117 @@
+Flow report for Example-Project
+Mon Sep  4 15:29:36 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Mon Sep  4 15:29:33 2023           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Example-Project                                 ;
+; Top-level Entity Name              ; top_level                                       ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 416 / 33,216 ( 1 % )                            ;
+;     Total combinational functions  ; 401 / 33,216 ( 1 % )                            ;
+;     Dedicated logic registers      ; 165 / 33,216 ( < 1 % )                          ;
+; Total registers                    ; 165                                             ;
+; Total pins                         ; 425 / 475 ( 89 % )                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
+; Device                             ; EP2C35F672C6                                    ;
+; Timing Models                      ; Final                                           ;
++------------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 09/04/2023 15:29:16 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Example-Project     ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                       ;
++-----------------------+-------------------+-----------------+-------------+------------+
+; Assignment Name       ; Value             ; Default Value   ; Entity Name ; Section Id ;
++-----------------------+-------------------+-----------------+-------------+------------+
+; COMPILER_SIGNATURE_ID ; 0.169385215628001 ; --              ; --          ; --         ;
+; TOP_LEVEL_ENTITY      ; top_level         ; Example-Project ; --          ; --         ;
++-----------------------+-------------------+-----------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 535 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 716 MB              ; 00:00:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 552 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 518 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:14     ; --                      ; --                  ; 00:00:14                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                               ;
++---------------------------+------------------+------------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name          ; OS Version ; Processor type ;
++---------------------------+------------------+------------------+------------+----------------+
+; Analysis & Synthesis      ; lhartmann-ufpb   ; Debian GNU/Linux ; 12         ; x86_64         ;
+; Fitter                    ; lhartmann-ufpb   ; Debian GNU/Linux ; 12         ; x86_64         ;
+; Assembler                 ; lhartmann-ufpb   ; Debian GNU/Linux ; 12         ; x86_64         ;
+; TimeQuest Timing Analyzer ; lhartmann-ufpb   ; Debian GNU/Linux ; 12         ; x86_64         ;
++---------------------------+------------------+------------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --source=../fpga/add_sub_sat.sv --source=../fpga/bakery.sv --source=../fpga/baking_pan.sv --source=../fpga/conveyor.sv --source=../fpga/cover.sv --source=../fpga/d7s.sv --source=../fpga/every.sv --source=../fpga/feeder.sv --source=../fpga/pressure.sv --source=../fpga/top_level.sv --source=../fpga/water.sv Example-Project
+quartus_fit --part=EP2C35F672C6 --read_settings_files=on Example-Project
+quartus_asm Example-Project
+quartus_sta Example-Project
+
+
+

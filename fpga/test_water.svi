@@ -1,0 +1,35 @@
+// water level test
+logic X_water, X_drain, X_dispenser, S_pressure_high;
+logic Y_water_base, Y_water_middle, Y_water_top;
+
+always_comb //                    WDDP
+	if (stim <  100) LEDG = 9'b0000_1000; else // Fill
+	if (stim <  150) LEDG = 9'b0001_0100; else // Drain
+	if (stim <  200) LEDG = 9'b0010_0000; else // Sleep
+	if (stim <  250) LEDG = 9'b0011_1000; else // Fill
+	if (stim <  300) LEDG = 9'b0100_0010; else // Fail dispense, unpressurized
+	if (stim <  350) LEDG = 9'b0101_0011; else // Dispense
+	if (stim <  400) LEDG = 9'b0110_0000; else // Sleep
+	if (stim <  450) LEDG = 9'b0111_1001; else // Fail fill, pressurized
+	if (stim <  500) LEDG = 9'b1000_1000; else // Fill
+	if (stim <  550) LEDG = 9'b1000_0000; else // Sleep full
+	                 LEDG = 9'b1000_0100;      // Drain
+
+assign X_water         = LEDG[3];
+assign X_drain         = LEDG[2];
+assign X_dispenser     = LEDG[1];
+assign S_pressure_high = LEDG[0];
+assign X_mixer         = LEDG[4];
+
+logic S_mixer;
+always_ff @(posedge CLOCK_50) S_mixer ^= r10;
+
+logic [15:0] S_water;
+Water(.clk(CLOCK_50), .en(r10), .*);
+
+//assign LEDR = S_water;
+assign HEX7 = ~( 7'b0001000 * Y_water_base 
+               | 7'b1000000 * Y_water_middle
+               | 7'b0000001 * Y_water_top
+               | 7'b0000110 * X_mixer * S_mixer
+               | 7'b0110000 * X_mixer * !S_mixer);

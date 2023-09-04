@@ -1,0 +1,13 @@
+// Test for Feeder
+logic rev, rem, feed;
+Feeder#(15,10,100)(CLOCK_50, r10hz, 1, rev, rem, feed);
+always_ff @(posedge CLOCK_50) if (feed) HEX0 = ~HEX0;
+assign HEX7 = ~{7{rev}};
+assign HEX6 = ~{7{rem}};
+// */
+/* // Test for Feeder
+logic rev, rem, feed;
+Feeder#(15,10,100)(CLOCK_50, r10hz, 1, rev, rem, feed);
+always_ff @(posedge CLOCK_50) if (feed) HEX0 = ~HEX0;
+assign HEX7 = ~{7{rev}};
+assign HEX6 = ~{7{rem}};

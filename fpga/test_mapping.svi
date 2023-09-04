@@ -1,0 +1,4 @@
+// Test OpenPLC to GPIO Mapping
+
+assign LEDR = {QX1, QX0};
+assign {IX1, IX0} = SW;

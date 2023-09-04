@@ -1,0 +1,1775 @@
+TimeQuest Timing Analyzer report for Example-Project
+Mon Sep  4 15:29:36 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'CLOCK_50'
+ 26. Fast Model Hold: 'CLOCK_50'
+ 27. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Example-Project                                                   ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 157.06 MHz ; 157.06 MHz      ; CLOCK_50   ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -5.367 ; -599.704      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -166.380           ;
++----------+--------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                                                        ;
++--------+------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                      ; To Node                                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -5.367 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.397      ;
+; -5.366 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[2]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.396      ;
+; -5.366 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.396      ;
+; -5.362 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[14]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.392      ;
+; -5.361 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[0]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.391      ;
+; -5.360 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[1]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.390      ;
+; -5.259 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.289      ;
+; -5.258 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[2]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.288      ;
+; -5.258 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.288      ;
+; -5.254 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[14]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.284      ;
+; -5.253 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[15]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.295      ;
+; -5.253 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[0]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.283      ;
+; -5.252 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[1]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 6.282      ;
+; -5.217 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[4]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.246      ;
+; -5.217 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.246      ;
+; -5.215 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.244      ;
+; -5.214 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.243      ;
+; -5.154 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.190      ;
+; -5.153 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[2]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.189      ;
+; -5.153 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.189      ;
+; -5.149 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[14]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.185      ;
+; -5.148 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[0]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.184      ;
+; -5.147 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[1]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.183      ;
+; -5.139 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[3]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.182      ;
+; -5.138 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.181      ;
+; -5.138 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[2]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.181      ;
+; -5.137 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[6]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.180      ;
+; -5.136 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[7]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.179      ;
+; -5.135 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[5]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.178      ;
+; -5.134 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[4]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 6.177      ;
+; -5.109 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[4]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.138      ;
+; -5.109 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.138      ;
+; -5.107 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.136      ;
+; -5.106 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.007     ; 6.135      ;
+; -5.089 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[14]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.131      ;
+; -5.026 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.062      ;
+; -5.025 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[2]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.061      ;
+; -5.025 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.061      ;
+; -5.021 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[14]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.057      ;
+; -5.020 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[0]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.056      ;
+; -5.019 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[1]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.055      ;
+; -5.016 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[15]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 6.058      ;
+; -5.004 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[4]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.039      ;
+; -5.004 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.039      ;
+; -5.002 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.037      ;
+; -5.001 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 6.036      ;
+; -4.990 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.028      ;
+; -4.990 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.028      ;
+; -4.989 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.027      ;
+; -4.938 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[10]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.978      ;
+; -4.902 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[3]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 5.945      ;
+; -4.901 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 5.944      ;
+; -4.901 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[2]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 5.944      ;
+; -4.900 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[6]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 5.943      ;
+; -4.899 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[7]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 5.942      ;
+; -4.898 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[5]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 5.941      ;
+; -4.897 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[4]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 5.940      ;
+; -4.892 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[11]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.916      ;
+; -4.890 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.914      ;
+; -4.890 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[13]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.914      ;
+; -4.889 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[8]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.913      ;
+; -4.889 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[9]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.913      ;
+; -4.888 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.912      ;
+; -4.876 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[4]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.911      ;
+; -4.876 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.911      ;
+; -4.874 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.909      ;
+; -4.873 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 5.908      ;
+; -4.867 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.905      ;
+; -4.867 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[11]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.905      ;
+; -4.864 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[13]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.902      ;
+; -4.855 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.893      ;
+; -4.855 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.893      ;
+; -4.854 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.892      ;
+; -4.852 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[14]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.006      ; 5.894      ;
+; -4.784 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[11]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.808      ;
+; -4.782 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.806      ;
+; -4.782 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[13]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.806      ;
+; -4.781 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[8]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.805      ;
+; -4.781 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[9]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.805      ;
+; -4.780 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.012     ; 5.804      ;
+; -4.767 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[12]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.807      ;
+; -4.766 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[8]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.806      ;
+; -4.766 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[11]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.806      ;
+; -4.765 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[0]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.805      ;
+; -4.765 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[13]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.805      ;
+; -4.763 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[9]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.803      ;
+; -4.732 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.770      ;
+; -4.732 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[11]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.770      ;
+; -4.729 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[13]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 5.767      ;
+; -4.707 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 5.753      ;
+; -4.701 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[10]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 5.741      ;
+; -4.679 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[11]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.709      ;
+; -4.677 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.707      ;
+; -4.677 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[13]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.707      ;
+; -4.676 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[8]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.706      ;
+; -4.676 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[9]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.706      ;
+; -4.675 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 5.705      ;
+; -4.667 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 5.698      ;
+; -4.666 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 5.697      ;
+; -4.666 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 5.697      ;
++--------+------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                                                                   ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                              ; To Node                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; t10                                                    ; t10                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|Water:comb_5|S_water[1]                ; Bakery:comb_133|Water:comb_5|S_water[1]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|S_mixer_ctr[0]                         ; Bakery:comb_133|S_mixer_ctr[0]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|S_mixer_ctr[1]                         ; Bakery:comb_133|S_mixer_ctr[1]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|S_mixer_ctr[2]                         ; Bakery:comb_133|S_mixer_ctr[2]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|S_mixer_ctr[3]                         ; Bakery:comb_133|S_mixer_ctr[3]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|S_mixer_delayed                        ; Bakery:comb_133|S_mixer_delayed                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|ds[0]                                  ; Bakery:comb_133|ds[0]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|ds[2]                                  ; Bakery:comb_133|ds[2]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|ds[1]                                  ; Bakery:comb_133|ds[1]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.517 ; Bakery:comb_133|BakingPan:comb_145|prbs[8]             ; Bakery:comb_133|BakingPan:comb_145|prbs[7]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.783      ;
+; 0.522 ; Bakery:comb_133|BakingPan:comb_145|prbs[11]            ; Bakery:comb_133|BakingPan:comb_145|prbs[10]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.788      ;
+; 0.523 ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ; Bakery:comb_133|BakingPan:comb_145|prbs[12]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523 ; Bakery:comb_133|BakingPan:comb_145|prbs[7]             ; Bakery:comb_133|BakingPan:comb_145|prbs[6]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[4]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[5]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.789      ;
+; 0.524 ; Bakery:comb_133|BakingPan:comb_145|prbs[2]             ; Bakery:comb_133|BakingPan:comb_145|prbs[1]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.790      ;
+; 0.525 ; Bakery:comb_133|BakingPan:comb_145|prbs[5]             ; Bakery:comb_133|BakingPan:comb_145|prbs[4]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.791      ;
+; 0.526 ; Every:comb_29|ctr[15]                                  ; Every:comb_29|ctr[15]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.526 ; Bakery:comb_133|BakingPan:comb_145|prbs[15]            ; Bakery:comb_133|BakingPan:comb_145|prbs[14]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.526 ; Bakery:comb_133|BakingPan:comb_145|S_pans[1]           ; Bakery:comb_133|BakingPan:comb_145|S_pans[2]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.526 ; Bakery:comb_133|BakingPan:comb_145|S_pans[2]           ; Bakery:comb_133|BakingPan:comb_145|S_pans[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.526 ; Bakery:comb_133|Feeder:comb_8|N_remain[3]              ; Bakery:comb_133|Feeder:comb_8|N_remain[3]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.527 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.793      ;
+; 0.528 ; Bakery:comb_133|BakingPan:comb_145|prbs[3]             ; Bakery:comb_133|BakingPan:comb_145|prbs[2]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.794      ;
+; 0.529 ; Bakery:comb_133|BakingPan:comb_145|prbs[6]             ; Bakery:comb_133|BakingPan:comb_145|prbs[5]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.795      ;
+; 0.530 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[5]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[6]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.796      ;
+; 0.531 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[3]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[4]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.797      ;
+; 0.532 ; Every:comb_30|ctr[6]                                   ; Every:comb_30|ctr[6]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.798      ;
+; 0.532 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.798      ;
+; 0.534 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[2]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.800      ;
+; 0.534 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.800      ;
+; 0.536 ; Bakery:comb_133|S_mixer_ctr[3]                         ; Bakery:comb_133|S_mixer_delayed                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.802      ;
+; 0.538 ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.804      ;
+; 0.539 ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ; Bakery:comb_133|BakingPan:comb_145|prbs[15]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.805      ;
+; 0.542 ; Bakery:comb_133|Feeder:comb_7|N_remain[4]              ; Bakery:comb_133|Feeder:comb_7|N_remain[4]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.808      ;
+; 0.543 ; Bakery:comb_133|Feeder:comb_8|ctr[3]                   ; Bakery:comb_133|Feeder:comb_8|ctr[3]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.809      ;
+; 0.547 ; Bakery:comb_133|Feeder:comb_7|ref_delay[6]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[6]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.813      ;
+; 0.560 ; t10                                                    ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.826      ;
+; 0.561 ; t10                                                    ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.827      ;
+; 0.579 ; Bakery:comb_133|S_mixed_flour[3]                       ; Bakery:comb_133|S_mixed_flour[3]                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.845      ;
+; 0.654 ; Bakery:comb_133|BakingPan:comb_145|prbs[9]             ; Bakery:comb_133|BakingPan:comb_145|prbs[8]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.920      ;
+; 0.655 ; Bakery:comb_133|BakingPan:comb_145|prbs[12]            ; Bakery:comb_133|BakingPan:comb_145|prbs[11]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.921      ;
+; 0.655 ; Bakery:comb_133|BakingPan:comb_145|prbs[14]            ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.921      ;
+; 0.657 ; Bakery:comb_133|BakingPan:comb_145|prbs[4]             ; Bakery:comb_133|BakingPan:comb_145|prbs[3]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.923      ;
+; 0.659 ; Bakery:comb_133|BakingPan:comb_145|prbs[10]            ; Bakery:comb_133|BakingPan:comb_145|prbs[9]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.925      ;
+; 0.663 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[2]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[3]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.929      ;
+; 0.665 ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ; Bakery:comb_133|BakingPan:comb_145|S_pans[1]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.931      ;
+; 0.678 ; Bakery:comb_133|Feeder:comb_7|ctr[4]                   ; Bakery:comb_133|Feeder:comb_7|ctr[3]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.944      ;
+; 0.719 ; Bakery:comb_133|BakingPan:comb_145|prbs[1]             ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.985      ;
+; 0.773 ; Every:comb_29|ctr[1]                                   ; Every:comb_29|ctr[1]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.039      ;
+; 0.774 ; Every:comb_29|ctr[9]                                   ; Every:comb_29|ctr[9]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.040      ;
+; 0.775 ; Every:comb_30|ctr[1]                                   ; Every:comb_30|ctr[1]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.041      ;
+; 0.775 ; Bakery:comb_133|Feeder:comb_8|ref_delay[1]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[1]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.041      ;
+; 0.775 ; Bakery:comb_133|S_mixer_ctr[1]                         ; Bakery:comb_133|S_mixer_ctr[2]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.041      ;
+; 0.787 ; Bakery:comb_133|Feeder:comb_7|N_remain[3]              ; Bakery:comb_133|Feeder:comb_7|N_remain[3]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.053      ;
+; 0.789 ; Bakery:comb_133|Feeder:comb_8|ref_delay[3]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[3]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.055      ;
+; 0.793 ; Bakery:comb_133|Feeder:comb_8|ref_delay[5]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[5]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.059      ;
+; 0.794 ; Bakery:comb_133|Feeder:comb_7|ref_delay[5]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[5]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.060      ;
+; 0.795 ; Every:comb_29|ctr[2]                                   ; Every:comb_29|ctr[2]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.061      ;
+; 0.797 ; Bakery:comb_133|Feeder:comb_7|N_remain[0]              ; Bakery:comb_133|Feeder:comb_7|N_remain[0]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.063      ;
+; 0.801 ; Every:comb_29|ctr[14]                                  ; Every:comb_29|ctr[14]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.067      ;
+; 0.801 ; Bakery:comb_133|Feeder:comb_8|N_remain[0]              ; Bakery:comb_133|Feeder:comb_8|N_remain[0]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.067      ;
+; 0.802 ; Bakery:comb_133|Feeder:comb_8|N_remain[2]              ; Bakery:comb_133|Feeder:comb_8|N_remain[2]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.802 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.805 ; Bakery:comb_133|Feeder:comb_7|N_remain[1]              ; Bakery:comb_133|Feeder:comb_7|N_remain[1]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; Bakery:comb_133|Feeder:comb_7|ref_delay[0]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[0]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; Bakery:comb_133|Feeder:comb_7|ref_delay[2]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[2]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; Bakery:comb_133|Feeder:comb_8|ctr[1]                   ; Bakery:comb_133|Feeder:comb_8|ctr[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.810 ; Every:comb_29|ctr[3]                                   ; Every:comb_29|ctr[3]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; Bakery:comb_133|Feeder:comb_8|N_remain[1]              ; Bakery:comb_133|Feeder:comb_8|N_remain[1]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.810 ; Bakery:comb_133|Feeder:comb_7|N_remain[2]              ; Bakery:comb_133|Feeder:comb_7|N_remain[2]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.076      ;
+; 0.812 ; Every:comb_30|ctr[5]                                   ; Every:comb_30|ctr[5]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.078      ;
+; 0.812 ; Bakery:comb_133|Feeder:comb_7|ref_delay[1]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[1]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.078      ;
+; 0.812 ; Bakery:comb_133|S_mixer_ctr[0]                         ; Bakery:comb_133|S_mixer_ctr[1]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.078      ;
+; 0.812 ; Bakery:comb_133|S_mixer_ctr[0]                         ; Bakery:comb_133|S_mixer_ctr[2]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.078      ;
+; 0.813 ; Bakery:comb_133|Feeder:comb_7|ref_delay[3]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[3]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.079      ;
+; 0.821 ; Bakery:comb_133|Feeder:comb_7|ref_delay[4]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[4]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.087      ;
+; 0.827 ; Every:comb_29|ctr[8]                                   ; Every:comb_29|ctr[8]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.093      ;
+; 0.828 ; Bakery:comb_133|Feeder:comb_7|ctr[1]                   ; Bakery:comb_133|Feeder:comb_7|ctr[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.094      ;
+; 0.835 ; Every:comb_29|ctr[6]                                   ; Every:comb_29|ctr[6]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.101      ;
+; 0.835 ; Bakery:comb_133|Feeder:comb_8|ref_delay[0]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[0]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.101      ;
+; 0.838 ; Bakery:comb_133|Feeder:comb_7|ctr[0]                   ; Bakery:comb_133|Feeder:comb_7|ctr[0]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839 ; Every:comb_30|ctr[0]                                   ; Every:comb_30|ctr[0]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.842 ; Bakery:comb_133|S_mixed_flour[1]                       ; Bakery:comb_133|S_mixed_flour[1]                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.108      ;
+; 0.848 ; Bakery:comb_133|S_mixed_flour[2]                       ; Bakery:comb_133|S_mixed_flour[2]                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.114      ;
+; 0.851 ; Bakery:comb_133|Feeder:comb_8|ref_delay[2]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[2]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.117      ;
+; 0.855 ; Bakery:comb_133|Feeder:comb_7|ctr[4]                   ; Bakery:comb_133|Feeder:comb_7|ctr[4]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.121      ;
+; 0.856 ; Bakery:comb_133|Feeder:comb_8|ref_delay[4]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[4]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.122      ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                                                 ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                 ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[4]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[4]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[5]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[5]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[6]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[6]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[11]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[11]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[12]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[12]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[13]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[13]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[14]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[14]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[15]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[15]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[8]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[8]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[9]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[9]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[10]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[10]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[11]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[11]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[12]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[12]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[14]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[14]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[15]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[15]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[4]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[4]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[5]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[5]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[6]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[6]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[7]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[7]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[8]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[8]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[9]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[9]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[10]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[10]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[11]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[11]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[12]               ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 10.222 ; 10.222 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[1]  ; CLOCK_50   ; 7.336  ; 7.336  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[3]  ; CLOCK_50   ; 7.894  ; 7.894  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[5]  ; CLOCK_50   ; 8.785  ; 8.785  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[11] ; CLOCK_50   ; 6.056  ; 6.056  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[15] ; CLOCK_50   ; 4.991  ; 4.991  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[17] ; CLOCK_50   ; 9.311  ; 9.311  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[19] ; CLOCK_50   ; 10.222 ; 10.222 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[23] ; CLOCK_50   ; 7.860  ; 7.860  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[25] ; CLOCK_50   ; 9.223  ; 9.223  ; Rise       ; CLOCK_50        ;
+; KEY[*]      ; CLOCK_50   ; 8.754  ; 8.754  ; Rise       ; CLOCK_50        ;
+;  KEY[0]     ; CLOCK_50   ; 8.754  ; 8.754  ; Rise       ; CLOCK_50        ;
+;  KEY[1]     ; CLOCK_50   ; 8.014  ; 8.014  ; Rise       ; CLOCK_50        ;
+;  KEY[2]     ; CLOCK_50   ; 5.914  ; 5.914  ; Rise       ; CLOCK_50        ;
+;  KEY[3]     ; CLOCK_50   ; 7.769  ; 7.769  ; Rise       ; CLOCK_50        ;
+; SW[*]       ; CLOCK_50   ; 10.007 ; 10.007 ; Rise       ; CLOCK_50        ;
+;  SW[0]      ; CLOCK_50   ; 6.355  ; 6.355  ; Rise       ; CLOCK_50        ;
+;  SW[13]     ; CLOCK_50   ; 4.889  ; 4.889  ; Rise       ; CLOCK_50        ;
+;  SW[14]     ; CLOCK_50   ; 8.970  ; 8.970  ; Rise       ; CLOCK_50        ;
+;  SW[15]     ; CLOCK_50   ; 10.007 ; 10.007 ; Rise       ; CLOCK_50        ;
+;  SW[16]     ; CLOCK_50   ; 7.763  ; 7.763  ; Rise       ; CLOCK_50        ;
+;  SW[17]     ; CLOCK_50   ; 8.609  ; 8.609  ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; -4.036 ; -4.036 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[1]  ; CLOCK_50   ; -5.027 ; -5.027 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[3]  ; CLOCK_50   ; -7.482 ; -7.482 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[5]  ; CLOCK_50   ; -5.723 ; -5.723 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[11] ; CLOCK_50   ; -5.826 ; -5.826 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[15] ; CLOCK_50   ; -4.036 ; -4.036 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[17] ; CLOCK_50   ; -5.262 ; -5.262 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[19] ; CLOCK_50   ; -5.589 ; -5.589 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[23] ; CLOCK_50   ; -4.798 ; -4.798 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[25] ; CLOCK_50   ; -5.409 ; -5.409 ; Rise       ; CLOCK_50        ;
+; KEY[*]      ; CLOCK_50   ; -5.460 ; -5.460 ; Rise       ; CLOCK_50        ;
+;  KEY[0]     ; CLOCK_50   ; -5.692 ; -5.692 ; Rise       ; CLOCK_50        ;
+;  KEY[1]     ; CLOCK_50   ; -7.602 ; -7.602 ; Rise       ; CLOCK_50        ;
+;  KEY[2]     ; CLOCK_50   ; -5.684 ; -5.684 ; Rise       ; CLOCK_50        ;
+;  KEY[3]     ; CLOCK_50   ; -5.460 ; -5.460 ; Rise       ; CLOCK_50        ;
+; SW[*]       ; CLOCK_50   ; 0.102  ; 0.102  ; Rise       ; CLOCK_50        ;
+;  SW[0]      ; CLOCK_50   ; 0.102  ; 0.102  ; Rise       ; CLOCK_50        ;
+;  SW[13]     ; CLOCK_50   ; -3.927 ; -3.927 ; Rise       ; CLOCK_50        ;
+;  SW[14]     ; CLOCK_50   ; -4.921 ; -4.921 ; Rise       ; CLOCK_50        ;
+;  SW[15]     ; CLOCK_50   ; -5.374 ; -5.374 ; Rise       ; CLOCK_50        ;
+;  SW[16]     ; CLOCK_50   ; -4.701 ; -4.701 ; Rise       ; CLOCK_50        ;
+;  SW[17]     ; CLOCK_50   ; -4.795 ; -4.795 ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 11.346 ; 11.346 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[6]  ; CLOCK_50   ; 9.885  ; 9.885  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[8]  ; CLOCK_50   ; 8.458  ; 8.458  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[12] ; CLOCK_50   ; 9.324  ; 9.324  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[18] ; CLOCK_50   ; 8.181  ; 8.181  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[20] ; CLOCK_50   ; 10.918 ; 10.918 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[22] ; CLOCK_50   ; 9.116  ; 9.116  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[24] ; CLOCK_50   ; 11.133 ; 11.133 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[26] ; CLOCK_50   ; 10.887 ; 10.887 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[27] ; CLOCK_50   ; 11.346 ; 11.346 ; Rise       ; CLOCK_50        ;
+; HEX0[*]     ; CLOCK_50   ; 7.400  ; 7.400  ; Rise       ; CLOCK_50        ;
+;  HEX0[2]    ; CLOCK_50   ; 7.391  ; 7.391  ; Rise       ; CLOCK_50        ;
+;  HEX0[3]    ; CLOCK_50   ; 7.400  ; 7.400  ; Rise       ; CLOCK_50        ;
+;  HEX0[4]    ; CLOCK_50   ; 7.400  ; 7.400  ; Rise       ; CLOCK_50        ;
+; HEX1[*]     ; CLOCK_50   ; 7.860  ; 7.860  ; Rise       ; CLOCK_50        ;
+;  HEX1[2]    ; CLOCK_50   ; 7.840  ; 7.840  ; Rise       ; CLOCK_50        ;
+;  HEX1[3]    ; CLOCK_50   ; 7.840  ; 7.840  ; Rise       ; CLOCK_50        ;
+;  HEX1[4]    ; CLOCK_50   ; 7.860  ; 7.860  ; Rise       ; CLOCK_50        ;
+; HEX2[*]     ; CLOCK_50   ; 9.276  ; 9.276  ; Rise       ; CLOCK_50        ;
+;  HEX2[2]    ; CLOCK_50   ; 9.266  ; 9.266  ; Rise       ; CLOCK_50        ;
+;  HEX2[3]    ; CLOCK_50   ; 9.276  ; 9.276  ; Rise       ; CLOCK_50        ;
+;  HEX2[4]    ; CLOCK_50   ; 9.251  ; 9.251  ; Rise       ; CLOCK_50        ;
+; HEX3[*]     ; CLOCK_50   ; 9.642  ; 9.642  ; Rise       ; CLOCK_50        ;
+;  HEX3[0]    ; CLOCK_50   ; 9.284  ; 9.284  ; Rise       ; CLOCK_50        ;
+;  HEX3[2]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[3]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[4]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[6]    ; CLOCK_50   ; 9.642  ; 9.642  ; Rise       ; CLOCK_50        ;
+; HEX4[*]     ; CLOCK_50   ; 8.530  ; 8.530  ; Rise       ; CLOCK_50        ;
+;  HEX4[0]    ; CLOCK_50   ; 7.737  ; 7.737  ; Rise       ; CLOCK_50        ;
+;  HEX4[1]    ; CLOCK_50   ; 8.530  ; 8.530  ; Rise       ; CLOCK_50        ;
+;  HEX4[2]    ; CLOCK_50   ; 8.481  ; 8.481  ; Rise       ; CLOCK_50        ;
+;  HEX4[3]    ; CLOCK_50   ; 8.221  ; 8.221  ; Rise       ; CLOCK_50        ;
+;  HEX4[4]    ; CLOCK_50   ; 7.567  ; 7.567  ; Rise       ; CLOCK_50        ;
+;  HEX4[5]    ; CLOCK_50   ; 7.726  ; 7.726  ; Rise       ; CLOCK_50        ;
+;  HEX4[6]    ; CLOCK_50   ; 8.244  ; 8.244  ; Rise       ; CLOCK_50        ;
+; HEX5[*]     ; CLOCK_50   ; 9.022  ; 9.022  ; Rise       ; CLOCK_50        ;
+;  HEX5[0]    ; CLOCK_50   ; 8.207  ; 8.207  ; Rise       ; CLOCK_50        ;
+;  HEX5[1]    ; CLOCK_50   ; 8.210  ; 8.210  ; Rise       ; CLOCK_50        ;
+;  HEX5[2]    ; CLOCK_50   ; 7.512  ; 7.512  ; Rise       ; CLOCK_50        ;
+;  HEX5[3]    ; CLOCK_50   ; 9.022  ; 9.022  ; Rise       ; CLOCK_50        ;
+;  HEX5[4]    ; CLOCK_50   ; 8.189  ; 8.189  ; Rise       ; CLOCK_50        ;
+;  HEX5[5]    ; CLOCK_50   ; 8.178  ; 8.178  ; Rise       ; CLOCK_50        ;
+;  HEX5[6]    ; CLOCK_50   ; 8.525  ; 8.525  ; Rise       ; CLOCK_50        ;
+; HEX6[*]     ; CLOCK_50   ; 8.980  ; 8.980  ; Rise       ; CLOCK_50        ;
+;  HEX6[0]    ; CLOCK_50   ; 8.761  ; 8.761  ; Rise       ; CLOCK_50        ;
+;  HEX6[1]    ; CLOCK_50   ; 8.499  ; 8.499  ; Rise       ; CLOCK_50        ;
+;  HEX6[2]    ; CLOCK_50   ; 8.774  ; 8.774  ; Rise       ; CLOCK_50        ;
+;  HEX6[3]    ; CLOCK_50   ; 8.757  ; 8.757  ; Rise       ; CLOCK_50        ;
+;  HEX6[4]    ; CLOCK_50   ; 8.980  ; 8.980  ; Rise       ; CLOCK_50        ;
+;  HEX6[5]    ; CLOCK_50   ; 8.868  ; 8.868  ; Rise       ; CLOCK_50        ;
+;  HEX6[6]    ; CLOCK_50   ; 8.853  ; 8.853  ; Rise       ; CLOCK_50        ;
+; HEX7[*]     ; CLOCK_50   ; 10.412 ; 10.412 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]    ; CLOCK_50   ; 8.433  ; 8.433  ; Rise       ; CLOCK_50        ;
+;  HEX7[1]    ; CLOCK_50   ; 8.541  ; 8.541  ; Rise       ; CLOCK_50        ;
+;  HEX7[2]    ; CLOCK_50   ; 10.310 ; 10.310 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]    ; CLOCK_50   ; 10.412 ; 10.412 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]    ; CLOCK_50   ; 10.310 ; 10.310 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]    ; CLOCK_50   ; 8.823  ; 8.823  ; Rise       ; CLOCK_50        ;
+;  HEX7[6]    ; CLOCK_50   ; 10.175 ; 10.175 ; Rise       ; CLOCK_50        ;
+; LEDG[*]     ; CLOCK_50   ; 10.613 ; 10.613 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]    ; CLOCK_50   ; 10.613 ; 10.613 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]    ; CLOCK_50   ; 9.000  ; 9.000  ; Rise       ; CLOCK_50        ;
+;  LEDG[5]    ; CLOCK_50   ; 9.275  ; 9.275  ; Rise       ; CLOCK_50        ;
+;  LEDG[6]    ; CLOCK_50   ; 9.147  ; 9.147  ; Rise       ; CLOCK_50        ;
+; LEDR[*]     ; CLOCK_50   ; 9.140  ; 9.140  ; Rise       ; CLOCK_50        ;
+;  LEDR[5]    ; CLOCK_50   ; 8.001  ; 8.001  ; Rise       ; CLOCK_50        ;
+;  LEDR[6]    ; CLOCK_50   ; 7.726  ; 7.726  ; Rise       ; CLOCK_50        ;
+;  LEDR[7]    ; CLOCK_50   ; 7.507  ; 7.507  ; Rise       ; CLOCK_50        ;
+;  LEDR[8]    ; CLOCK_50   ; 6.358  ; 6.358  ; Rise       ; CLOCK_50        ;
+;  LEDR[9]    ; CLOCK_50   ; 6.370  ; 6.370  ; Rise       ; CLOCK_50        ;
+;  LEDR[10]   ; CLOCK_50   ; 6.370  ; 6.370  ; Rise       ; CLOCK_50        ;
+;  LEDR[11]   ; CLOCK_50   ; 6.362  ; 6.362  ; Rise       ; CLOCK_50        ;
+;  LEDR[16]   ; CLOCK_50   ; 9.140  ; 9.140  ; Rise       ; CLOCK_50        ;
+;  LEDR[17]   ; CLOCK_50   ; 9.117  ; 9.117  ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 7.831  ; 7.831  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[6]  ; CLOCK_50   ; 9.577  ; 9.577  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[8]  ; CLOCK_50   ; 8.458  ; 8.458  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[12] ; CLOCK_50   ; 9.080  ; 9.080  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[18] ; CLOCK_50   ; 7.831  ; 7.831  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[20] ; CLOCK_50   ; 9.895  ; 9.895  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[22] ; CLOCK_50   ; 8.835  ; 8.835  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[24] ; CLOCK_50   ; 10.151 ; 10.151 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[26] ; CLOCK_50   ; 9.307  ; 9.307  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[27] ; CLOCK_50   ; 10.005 ; 10.005 ; Rise       ; CLOCK_50        ;
+; HEX0[*]     ; CLOCK_50   ; 7.391  ; 7.391  ; Rise       ; CLOCK_50        ;
+;  HEX0[2]    ; CLOCK_50   ; 7.391  ; 7.391  ; Rise       ; CLOCK_50        ;
+;  HEX0[3]    ; CLOCK_50   ; 7.400  ; 7.400  ; Rise       ; CLOCK_50        ;
+;  HEX0[4]    ; CLOCK_50   ; 7.400  ; 7.400  ; Rise       ; CLOCK_50        ;
+; HEX1[*]     ; CLOCK_50   ; 7.840  ; 7.840  ; Rise       ; CLOCK_50        ;
+;  HEX1[2]    ; CLOCK_50   ; 7.840  ; 7.840  ; Rise       ; CLOCK_50        ;
+;  HEX1[3]    ; CLOCK_50   ; 7.840  ; 7.840  ; Rise       ; CLOCK_50        ;
+;  HEX1[4]    ; CLOCK_50   ; 7.860  ; 7.860  ; Rise       ; CLOCK_50        ;
+; HEX2[*]     ; CLOCK_50   ; 9.251  ; 9.251  ; Rise       ; CLOCK_50        ;
+;  HEX2[2]    ; CLOCK_50   ; 9.266  ; 9.266  ; Rise       ; CLOCK_50        ;
+;  HEX2[3]    ; CLOCK_50   ; 9.276  ; 9.276  ; Rise       ; CLOCK_50        ;
+;  HEX2[4]    ; CLOCK_50   ; 9.251  ; 9.251  ; Rise       ; CLOCK_50        ;
+; HEX3[*]     ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[0]    ; CLOCK_50   ; 9.117  ; 9.117  ; Rise       ; CLOCK_50        ;
+;  HEX3[2]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[3]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[4]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[6]    ; CLOCK_50   ; 9.398  ; 9.398  ; Rise       ; CLOCK_50        ;
+; HEX4[*]     ; CLOCK_50   ; 7.265  ; 7.265  ; Rise       ; CLOCK_50        ;
+;  HEX4[0]    ; CLOCK_50   ; 7.433  ; 7.433  ; Rise       ; CLOCK_50        ;
+;  HEX4[1]    ; CLOCK_50   ; 8.226  ; 8.226  ; Rise       ; CLOCK_50        ;
+;  HEX4[2]    ; CLOCK_50   ; 8.202  ; 8.202  ; Rise       ; CLOCK_50        ;
+;  HEX4[3]    ; CLOCK_50   ; 7.917  ; 7.917  ; Rise       ; CLOCK_50        ;
+;  HEX4[4]    ; CLOCK_50   ; 7.265  ; 7.265  ; Rise       ; CLOCK_50        ;
+;  HEX4[5]    ; CLOCK_50   ; 7.454  ; 7.454  ; Rise       ; CLOCK_50        ;
+;  HEX4[6]    ; CLOCK_50   ; 7.940  ; 7.940  ; Rise       ; CLOCK_50        ;
+; HEX5[*]     ; CLOCK_50   ; 7.195  ; 7.195  ; Rise       ; CLOCK_50        ;
+;  HEX5[0]    ; CLOCK_50   ; 7.915  ; 7.915  ; Rise       ; CLOCK_50        ;
+;  HEX5[1]    ; CLOCK_50   ; 7.893  ; 7.893  ; Rise       ; CLOCK_50        ;
+;  HEX5[2]    ; CLOCK_50   ; 7.195  ; 7.195  ; Rise       ; CLOCK_50        ;
+;  HEX5[3]    ; CLOCK_50   ; 8.707  ; 8.707  ; Rise       ; CLOCK_50        ;
+;  HEX5[4]    ; CLOCK_50   ; 7.901  ; 7.901  ; Rise       ; CLOCK_50        ;
+;  HEX5[5]    ; CLOCK_50   ; 7.886  ; 7.886  ; Rise       ; CLOCK_50        ;
+;  HEX5[6]    ; CLOCK_50   ; 8.208  ; 8.208  ; Rise       ; CLOCK_50        ;
+; HEX6[*]     ; CLOCK_50   ; 7.872  ; 7.872  ; Rise       ; CLOCK_50        ;
+;  HEX6[0]    ; CLOCK_50   ; 8.156  ; 8.156  ; Rise       ; CLOCK_50        ;
+;  HEX6[1]    ; CLOCK_50   ; 7.872  ; 7.872  ; Rise       ; CLOCK_50        ;
+;  HEX6[2]    ; CLOCK_50   ; 8.152  ; 8.152  ; Rise       ; CLOCK_50        ;
+;  HEX6[3]    ; CLOCK_50   ; 8.134  ; 8.134  ; Rise       ; CLOCK_50        ;
+;  HEX6[4]    ; CLOCK_50   ; 8.383  ; 8.383  ; Rise       ; CLOCK_50        ;
+;  HEX6[5]    ; CLOCK_50   ; 8.270  ; 8.270  ; Rise       ; CLOCK_50        ;
+;  HEX6[6]    ; CLOCK_50   ; 8.229  ; 8.229  ; Rise       ; CLOCK_50        ;
+; HEX7[*]     ; CLOCK_50   ; 8.413  ; 8.413  ; Rise       ; CLOCK_50        ;
+;  HEX7[0]    ; CLOCK_50   ; 8.433  ; 8.433  ; Rise       ; CLOCK_50        ;
+;  HEX7[1]    ; CLOCK_50   ; 8.413  ; 8.413  ; Rise       ; CLOCK_50        ;
+;  HEX7[2]    ; CLOCK_50   ; 8.730  ; 8.730  ; Rise       ; CLOCK_50        ;
+;  HEX7[3]    ; CLOCK_50   ; 9.071  ; 9.071  ; Rise       ; CLOCK_50        ;
+;  HEX7[4]    ; CLOCK_50   ; 8.730  ; 8.730  ; Rise       ; CLOCK_50        ;
+;  HEX7[5]    ; CLOCK_50   ; 8.695  ; 8.695  ; Rise       ; CLOCK_50        ;
+;  HEX7[6]    ; CLOCK_50   ; 9.193  ; 9.193  ; Rise       ; CLOCK_50        ;
+; LEDG[*]     ; CLOCK_50   ; 8.719  ; 8.719  ; Rise       ; CLOCK_50        ;
+;  LEDG[2]    ; CLOCK_50   ; 9.590  ; 9.590  ; Rise       ; CLOCK_50        ;
+;  LEDG[3]    ; CLOCK_50   ; 8.719  ; 8.719  ; Rise       ; CLOCK_50        ;
+;  LEDG[5]    ; CLOCK_50   ; 8.967  ; 8.967  ; Rise       ; CLOCK_50        ;
+;  LEDG[6]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+; LEDR[*]     ; CLOCK_50   ; 6.358  ; 6.358  ; Rise       ; CLOCK_50        ;
+;  LEDR[5]    ; CLOCK_50   ; 8.001  ; 8.001  ; Rise       ; CLOCK_50        ;
+;  LEDR[6]    ; CLOCK_50   ; 7.726  ; 7.726  ; Rise       ; CLOCK_50        ;
+;  LEDR[7]    ; CLOCK_50   ; 7.507  ; 7.507  ; Rise       ; CLOCK_50        ;
+;  LEDR[8]    ; CLOCK_50   ; 6.358  ; 6.358  ; Rise       ; CLOCK_50        ;
+;  LEDR[9]    ; CLOCK_50   ; 6.370  ; 6.370  ; Rise       ; CLOCK_50        ;
+;  LEDR[10]   ; CLOCK_50   ; 6.370  ; 6.370  ; Rise       ; CLOCK_50        ;
+;  LEDR[11]   ; CLOCK_50   ; 6.362  ; 6.362  ; Rise       ; CLOCK_50        ;
+;  LEDR[16]   ; CLOCK_50   ; 9.140  ; 9.140  ; Rise       ; CLOCK_50        ;
+;  LEDR[17]   ; CLOCK_50   ; 9.117  ; 9.117  ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; GPIO_1[1]  ; LEDG[4]     ; 11.019 ;        ;        ; 11.019 ;
+; GPIO_1[11] ; LEDG[7]     ; 10.776 ;        ;        ; 10.776 ;
+; GPIO_1[15] ; LEDR[16]    ; 11.769 ;        ;        ; 11.769 ;
+; GPIO_1[15] ; LEDR[17]    ; 11.747 ;        ;        ; 11.747 ;
+; KEY[2]     ; LEDG[7]     ;        ; 10.634 ; 10.634 ;        ;
+; KEY[3]     ; LEDG[4]     ;        ; 11.452 ; 11.452 ;        ;
+; SW[0]      ; LEDG[4]     ; 7.304  ; 7.304  ; 7.304  ; 7.304  ;
+; SW[0]      ; LEDG[7]     ; 6.842  ; 6.842  ; 6.842  ; 6.842  ;
+; SW[0]      ; LEDR[16]    ; 7.631  ; 7.631  ; 7.631  ; 7.631  ;
+; SW[0]      ; LEDR[17]    ; 7.609  ; 7.609  ; 7.609  ; 7.609  ;
+; SW[13]     ; LEDR[16]    ; 11.660 ;        ;        ; 11.660 ;
+; SW[13]     ; LEDR[17]    ; 11.638 ;        ;        ; 11.638 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; GPIO_1[1]  ; LEDG[4]     ; 11.019 ;        ;        ; 11.019 ;
+; GPIO_1[11] ; LEDG[7]     ; 10.776 ;        ;        ; 10.776 ;
+; GPIO_1[15] ; LEDR[16]    ; 11.769 ;        ;        ; 11.769 ;
+; GPIO_1[15] ; LEDR[17]    ; 11.747 ;        ;        ; 11.747 ;
+; KEY[2]     ; LEDG[7]     ;        ; 10.634 ; 10.634 ;        ;
+; KEY[3]     ; LEDG[4]     ;        ; 11.452 ; 11.452 ;        ;
+; SW[0]      ; LEDG[4]     ; 7.304  ; 7.304  ; 7.304  ; 7.304  ;
+; SW[0]      ; LEDG[7]     ; 6.842  ; 6.842  ; 6.842  ; 6.842  ;
+; SW[0]      ; LEDR[16]    ; 7.631  ; 7.631  ; 7.631  ; 7.631  ;
+; SW[0]      ; LEDR[17]    ; 7.609  ; 7.609  ; 7.609  ; 7.609  ;
+; SW[13]     ; LEDR[16]    ; 11.660 ;        ;        ; 11.660 ;
+; SW[13]     ; LEDR[17]    ; 11.638 ;        ;        ; 11.638 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -1.839 ; -183.095      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -166.380           ;
++----------+--------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                                                                        ;
++--------+------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                      ; To Node                                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.839 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[2]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.866      ;
+; -1.839 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.866      ;
+; -1.838 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[0]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.865      ;
+; -1.838 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.865      ;
+; -1.837 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[1]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.864      ;
+; -1.835 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[14]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.862      ;
+; -1.793 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[2]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.820      ;
+; -1.793 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.820      ;
+; -1.792 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[0]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.819      ;
+; -1.792 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.819      ;
+; -1.791 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[1]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.818      ;
+; -1.789 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[14]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.816      ;
+; -1.773 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[4]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 2.799      ;
+; -1.773 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 2.799      ;
+; -1.772 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 2.798      ;
+; -1.771 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 2.797      ;
+; -1.746 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[2]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.778      ;
+; -1.746 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.778      ;
+; -1.745 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[15]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 2.782      ;
+; -1.745 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[0]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.777      ;
+; -1.745 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.777      ;
+; -1.744 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[1]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.776      ;
+; -1.742 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[14]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.774      ;
+; -1.737 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[3]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.776      ;
+; -1.736 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.775      ;
+; -1.736 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[2]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.775      ;
+; -1.736 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[6]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.775      ;
+; -1.735 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[7]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.774      ;
+; -1.734 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[5]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.773      ;
+; -1.733 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[4]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.772      ;
+; -1.727 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[4]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 2.753      ;
+; -1.727 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 2.753      ;
+; -1.726 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 2.752      ;
+; -1.725 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.006     ; 2.751      ;
+; -1.706 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[14]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 2.743      ;
+; -1.680 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[4]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 2.711      ;
+; -1.680 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 2.711      ;
+; -1.679 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 2.710      ;
+; -1.678 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Cover:comb_3|S_cover[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 2.709      ;
+; -1.672 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[2]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.704      ;
+; -1.672 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.704      ;
+; -1.671 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[0]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.703      ;
+; -1.671 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[3]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.703      ;
+; -1.670 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[1]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.702      ;
+; -1.668 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[14]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.700      ;
+; -1.660 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.695      ;
+; -1.658 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.693      ;
+; -1.657 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.692      ;
+; -1.647 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[15]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 2.684      ;
+; -1.639 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[3]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.678      ;
+; -1.638 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[1]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.677      ;
+; -1.638 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[2]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.677      ;
+; -1.638 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[6]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.677      ;
+; -1.637 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[7]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.676      ;
+; -1.636 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[10]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 2.672      ;
+; -1.636 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[5]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.675      ;
+; -1.635 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[4]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.007      ; 2.674      ;
+; -1.629 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[11]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.650      ;
+; -1.628 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.649      ;
+; -1.626 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.647      ;
+; -1.626 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[13]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.647      ;
+; -1.624 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[8]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.645      ;
+; -1.624 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Cover:comb_3|S_cover[9]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.645      ;
+; -1.611 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.646      ;
+; -1.611 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[11]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.646      ;
+; -1.610 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Water:comb_5|S_water[13]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.645      ;
+; -1.608 ; Bakery:comb_133|Cover:comb_3|S_cover[14]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[14]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.005      ; 2.645      ;
+; -1.606 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[4]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 2.637      ;
+; -1.606 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[5]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 2.637      ;
+; -1.605 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[7]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 2.636      ;
+; -1.604 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Cover:comb_3|S_cover[6]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.001     ; 2.635      ;
+; -1.583 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[11]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.604      ;
+; -1.582 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.603      ;
+; -1.580 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[10]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.615      ;
+; -1.580 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.601      ;
+; -1.580 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[13]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.601      ;
+; -1.578 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[15]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.613      ;
+; -1.578 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[8]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.599      ;
+; -1.578 ; Bakery:comb_133|Pressure:comb_4|S_pressure[14] ; Bakery:comb_133|Cover:comb_3|S_cover[9]             ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.011     ; 2.599      ;
+; -1.577 ; Bakery:comb_133|Pressure:comb_4|S_pressure[15] ; Bakery:comb_133|Water:comb_5|S_water[12]            ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.003      ; 2.612      ;
+; -1.567 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[2]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.609      ;
+; -1.567 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[3]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.609      ;
+; -1.566 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[4]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.608      ;
+; -1.566 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[14] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.608      ;
+; -1.564 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[5]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.606      ;
+; -1.562 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[12] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.604      ;
+; -1.562 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[13] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.604      ;
+; -1.561 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[12]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 2.597      ;
+; -1.560 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[8]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 2.596      ;
+; -1.560 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[11]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 2.596      ;
+; -1.559 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[0]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 2.595      ;
+; -1.559 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[13]      ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 2.595      ;
+; -1.559 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[9]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.601      ;
+; -1.559 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[10] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.601      ;
+; -1.559 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[11] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.601      ;
+; -1.559 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[15] ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.601      ;
+; -1.558 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[8]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.600      ;
+; -1.557 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[6]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.599      ;
+; -1.557 ; Bakery:comb_133|Water:comb_5|S_water[7]        ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[7]  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.010      ; 2.599      ;
+; -1.556 ; Bakery:comb_133|Cover:comb_3|S_cover[15]       ; Bakery:comb_133|Pressure:comb_4|S_pressure[9]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.004      ; 2.592      ;
++--------+------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                                                                   ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                              ; To Node                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; t10                                                    ; t10                                                    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|Water:comb_5|S_water[1]                ; Bakery:comb_133|Water:comb_5|S_water[1]                ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|S_mixer_ctr[0]                         ; Bakery:comb_133|S_mixer_ctr[0]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|S_mixer_ctr[1]                         ; Bakery:comb_133|S_mixer_ctr[1]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|S_mixer_ctr[2]                         ; Bakery:comb_133|S_mixer_ctr[2]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|S_mixer_ctr[3]                         ; Bakery:comb_133|S_mixer_ctr[3]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|S_mixer_delayed                        ; Bakery:comb_133|S_mixer_delayed                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|ds[0]                                  ; Bakery:comb_133|ds[0]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|ds[2]                                  ; Bakery:comb_133|ds[2]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|ds[1]                                  ; Bakery:comb_133|ds[1]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.239 ; Bakery:comb_133|BakingPan:comb_145|prbs[8]             ; Bakery:comb_133|BakingPan:comb_145|prbs[7]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[4]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[5]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240 ; Bakery:comb_133|Feeder:comb_8|N_remain[3]              ; Bakery:comb_133|Feeder:comb_8|N_remain[3]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; Every:comb_29|ctr[15]                                  ; Every:comb_29|ctr[15]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; Bakery:comb_133|BakingPan:comb_145|prbs[11]            ; Bakery:comb_133|BakingPan:comb_145|prbs[10]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; Bakery:comb_133|BakingPan:comb_145|S_pans[1]           ; Bakery:comb_133|BakingPan:comb_145|S_pans[2]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; Bakery:comb_133|BakingPan:comb_145|prbs[7]             ; Bakery:comb_133|BakingPan:comb_145|prbs[6]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; Bakery:comb_133|BakingPan:comb_145|S_pans[2]           ; Bakery:comb_133|BakingPan:comb_145|S_pans[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[5]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[6]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.395      ;
+; 0.244 ; Bakery:comb_133|BakingPan:comb_145|prbs[5]             ; Bakery:comb_133|BakingPan:comb_145|prbs[4]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.396      ;
+; 0.245 ; Bakery:comb_133|BakingPan:comb_145|prbs[15]            ; Bakery:comb_133|BakingPan:comb_145|prbs[14]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.397      ;
+; 0.245 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[3]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[4]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; Every:comb_30|ctr[6]                                   ; Every:comb_30|ctr[6]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[2]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.398      ;
+; 0.248 ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.400      ;
+; 0.249 ; Bakery:comb_133|Feeder:comb_7|N_remain[4]              ; Bakery:comb_133|Feeder:comb_7|N_remain[4]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.401      ;
+; 0.250 ; Bakery:comb_133|S_mixer_ctr[3]                         ; Bakery:comb_133|S_mixer_delayed                        ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.402      ;
+; 0.252 ; Bakery:comb_133|Feeder:comb_7|ref_delay[6]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[6]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.404      ;
+; 0.253 ; Bakery:comb_133|Feeder:comb_8|ctr[3]                   ; Bakery:comb_133|Feeder:comb_8|ctr[3]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.405      ;
+; 0.260 ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ; Bakery:comb_133|BakingPan:comb_145|prbs[12]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.412      ;
+; 0.260 ; t10                                                    ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.412      ;
+; 0.261 ; t10                                                    ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.413      ;
+; 0.262 ; Bakery:comb_133|BakingPan:comb_145|prbs[2]             ; Bakery:comb_133|BakingPan:comb_145|prbs[1]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.414      ;
+; 0.264 ; Bakery:comb_133|BakingPan:comb_145|prbs[3]             ; Bakery:comb_133|BakingPan:comb_145|prbs[2]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.416      ;
+; 0.266 ; Bakery:comb_133|BakingPan:comb_145|prbs[6]             ; Bakery:comb_133|BakingPan:comb_145|prbs[5]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.418      ;
+; 0.269 ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ; Bakery:comb_133|BakingPan:comb_145|prbs[15]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.421      ;
+; 0.270 ; Bakery:comb_133|S_mixed_flour[3]                       ; Bakery:comb_133|S_mixed_flour[3]                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.422      ;
+; 0.289 ; Bakery:comb_133|BakingPan:comb_145|prbs[9]             ; Bakery:comb_133|BakingPan:comb_145|prbs[8]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.441      ;
+; 0.290 ; Bakery:comb_133|BakingPan:comb_145|prbs[12]            ; Bakery:comb_133|BakingPan:comb_145|prbs[11]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.442      ;
+; 0.291 ; Bakery:comb_133|BakingPan:comb_145|prbs[4]             ; Bakery:comb_133|BakingPan:comb_145|prbs[3]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.443      ;
+; 0.295 ; Bakery:comb_133|BakingPan:comb_145|prbs[10]            ; Bakery:comb_133|BakingPan:comb_145|prbs[9]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.447      ;
+; 0.297 ; Bakery:comb_133|BakingPan:comb_145|prbs[14]            ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.449      ;
+; 0.306 ; Bakery:comb_133|Feeder:comb_7|ctr[4]                   ; Bakery:comb_133|Feeder:comb_7|ctr[3]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.458      ;
+; 0.325 ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[2]       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[3]       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.477      ;
+; 0.327 ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ; Bakery:comb_133|BakingPan:comb_145|S_pans[1]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.479      ;
+; 0.331 ; Bakery:comb_133|BakingPan:comb_145|prbs[1]             ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.483      ;
+; 0.356 ; Every:comb_29|ctr[2]                                   ; Every:comb_29|ctr[2]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.508      ;
+; 0.357 ; Every:comb_29|ctr[1]                                   ; Every:comb_29|ctr[1]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.509      ;
+; 0.357 ; Every:comb_29|ctr[9]                                   ; Every:comb_29|ctr[9]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; Every:comb_29|ctr[14]                                  ; Every:comb_29|ctr[14]                                  ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Bakery:comb_133|Feeder:comb_8|N_remain[2]              ; Bakery:comb_133|Feeder:comb_8|N_remain[2]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Bakery:comb_133|Feeder:comb_7|N_remain[0]              ; Bakery:comb_133|Feeder:comb_7|N_remain[0]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.361 ; Every:comb_30|ctr[1]                                   ; Every:comb_30|ctr[1]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Bakery:comb_133|Feeder:comb_8|ref_delay[1]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[1]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Bakery:comb_133|Feeder:comb_8|N_remain[0]              ; Bakery:comb_133|Feeder:comb_8|N_remain[0]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; Bakery:comb_133|Feeder:comb_7|ref_delay[0]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[0]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.362 ; Bakery:comb_133|Feeder:comb_7|ref_delay[2]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[2]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.514      ;
+; 0.363 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.363 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.364 ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; Bakery:comb_133|Feeder:comb_7|N_remain[2]              ; Bakery:comb_133|Feeder:comb_7|N_remain[2]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; Bakery:comb_133|Feeder:comb_7|N_remain[3]              ; Bakery:comb_133|Feeder:comb_7|N_remain[3]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; Bakery:comb_133|S_mixer_ctr[1]                         ; Bakery:comb_133|S_mixer_ctr[2]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.517      ;
+; 0.366 ; Every:comb_29|ctr[8]                                   ; Every:comb_29|ctr[8]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.518      ;
+; 0.368 ; Bakery:comb_133|Feeder:comb_8|ref_delay[3]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[3]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; Every:comb_29|ctr[3]                                   ; Every:comb_29|ctr[3]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; Every:comb_29|ctr[6]                                   ; Every:comb_29|ctr[6]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; Bakery:comb_133|Feeder:comb_8|N_remain[1]              ; Bakery:comb_133|Feeder:comb_8|N_remain[1]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; Bakery:comb_133|Feeder:comb_7|N_remain[1]              ; Bakery:comb_133|Feeder:comb_7|N_remain[1]              ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; Bakery:comb_133|Feeder:comb_8|ref_delay[5]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[5]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; Bakery:comb_133|Feeder:comb_7|ctr[0]                   ; Bakery:comb_133|Feeder:comb_7|ctr[0]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; Bakery:comb_133|Feeder:comb_7|ref_delay[5]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[5]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; Bakery:comb_133|Feeder:comb_8|ref_delay[0]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[0]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; Bakery:comb_133|Feeder:comb_7|ref_delay[4]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[4]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; Every:comb_30|ctr[5]                                   ; Every:comb_30|ctr[5]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; Bakery:comb_133|Feeder:comb_7|ref_delay[1]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[1]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.525      ;
+; 0.373 ; Bakery:comb_133|S_mixer_ctr[0]                         ; Bakery:comb_133|S_mixer_ctr[2]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; Every:comb_30|ctr[0]                                   ; Every:comb_30|ctr[0]                                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; Bakery:comb_133|Feeder:comb_7|ref_delay[3]             ; Bakery:comb_133|Feeder:comb_7|ref_delay[3]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; Bakery:comb_133|Feeder:comb_7|ctr[1]                   ; Bakery:comb_133|Feeder:comb_7|ctr[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.377 ; Bakery:comb_133|Feeder:comb_8|ctr[1]                   ; Bakery:comb_133|Feeder:comb_8|ctr[1]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; Bakery:comb_133|S_mixer_ctr[0]                         ; Bakery:comb_133|S_mixer_ctr[1]                         ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.530      ;
+; 0.380 ; Bakery:comb_133|Feeder:comb_8|ref_delay[2]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[2]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.532      ;
+; 0.380 ; Bakery:comb_133|S_mixed_flour[1]                       ; Bakery:comb_133|S_mixed_flour[1]                       ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.532      ;
+; 0.383 ; Bakery:comb_133|Feeder:comb_7|ctr[4]                   ; Bakery:comb_133|Feeder:comb_7|ctr[4]                   ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.535      ;
+; 0.384 ; Bakery:comb_133|Feeder:comb_8|ref_delay[4]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[4]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.536      ;
+; 0.384 ; Bakery:comb_133|Feeder:comb_8|ref_delay[6]             ; Bakery:comb_133|Feeder:comb_8|ref_delay[6]             ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.536      ;
++-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                                                 ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                                 ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_3|ctr[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|Every:comb_4|ctr[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[0]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[1]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[2]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[3]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[4]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[4]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[5]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[5]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[6]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_conveyor[6]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[11]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[11]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[12]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[12]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[13]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[13]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[14]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[14]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[15]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[15]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[8]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[8]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[9]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pan_weight[9]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|S_pans[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[0]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[10]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[10]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[11]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[11]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[12]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[12]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[13]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[14]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[14]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[15]            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[15]            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[1]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[2]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[3]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[4]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[4]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[5]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[5]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[6]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[6]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[7]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[7]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[8]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[8]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[9]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|BakingPan:comb_145|prbs[9]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[10]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[10]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[11]               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[11]               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; Bakery:comb_133|Cover:comb_3|S_cover[12]               ;
++--------+--------------+----------------+------------------+----------+------------+--------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 4.910 ; 4.910 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[1]  ; CLOCK_50   ; 3.639 ; 3.639 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[3]  ; CLOCK_50   ; 4.064 ; 4.064 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[5]  ; CLOCK_50   ; 4.342 ; 4.342 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[11] ; CLOCK_50   ; 3.082 ; 3.082 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[15] ; CLOCK_50   ; 2.596 ; 2.596 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[17] ; CLOCK_50   ; 4.505 ; 4.505 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[19] ; CLOCK_50   ; 4.910 ; 4.910 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[23] ; CLOCK_50   ; 3.913 ; 3.913 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[25] ; CLOCK_50   ; 4.484 ; 4.484 ; Rise       ; CLOCK_50        ;
+; KEY[*]      ; CLOCK_50   ; 4.333 ; 4.333 ; Rise       ; CLOCK_50        ;
+;  KEY[0]     ; CLOCK_50   ; 4.333 ; 4.333 ; Rise       ; CLOCK_50        ;
+;  KEY[1]     ; CLOCK_50   ; 4.108 ; 4.108 ; Rise       ; CLOCK_50        ;
+;  KEY[2]     ; CLOCK_50   ; 3.014 ; 3.014 ; Rise       ; CLOCK_50        ;
+;  KEY[3]     ; CLOCK_50   ; 3.834 ; 3.834 ; Rise       ; CLOCK_50        ;
+; SW[*]       ; CLOCK_50   ; 4.784 ; 4.784 ; Rise       ; CLOCK_50        ;
+;  SW[0]      ; CLOCK_50   ; 2.534 ; 2.534 ; Rise       ; CLOCK_50        ;
+;  SW[13]     ; CLOCK_50   ; 2.548 ; 2.548 ; Rise       ; CLOCK_50        ;
+;  SW[14]     ; CLOCK_50   ; 4.299 ; 4.299 ; Rise       ; CLOCK_50        ;
+;  SW[15]     ; CLOCK_50   ; 4.784 ; 4.784 ; Rise       ; CLOCK_50        ;
+;  SW[16]     ; CLOCK_50   ; 3.874 ; 3.874 ; Rise       ; CLOCK_50        ;
+;  SW[17]     ; CLOCK_50   ; 4.167 ; 4.167 ; Rise       ; CLOCK_50        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; -2.164 ; -2.164 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[1]  ; CLOCK_50   ; -2.611 ; -2.611 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[3]  ; CLOCK_50   ; -3.807 ; -3.807 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[5]  ; CLOCK_50   ; -2.955 ; -2.955 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[11] ; CLOCK_50   ; -2.962 ; -2.962 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[15] ; CLOCK_50   ; -2.164 ; -2.164 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[17] ; CLOCK_50   ; -2.729 ; -2.729 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[19] ; CLOCK_50   ; -2.847 ; -2.847 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[23] ; CLOCK_50   ; -2.526 ; -2.526 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[25] ; CLOCK_50   ; -2.830 ; -2.830 ; Rise       ; CLOCK_50        ;
+; KEY[*]      ; CLOCK_50   ; -2.806 ; -2.806 ; Rise       ; CLOCK_50        ;
+;  KEY[0]     ; CLOCK_50   ; -2.946 ; -2.946 ; Rise       ; CLOCK_50        ;
+;  KEY[1]     ; CLOCK_50   ; -3.851 ; -3.851 ; Rise       ; CLOCK_50        ;
+;  KEY[2]     ; CLOCK_50   ; -2.894 ; -2.894 ; Rise       ; CLOCK_50        ;
+;  KEY[3]     ; CLOCK_50   ; -2.806 ; -2.806 ; Rise       ; CLOCK_50        ;
+; SW[*]       ; CLOCK_50   ; 0.313  ; 0.313  ; Rise       ; CLOCK_50        ;
+;  SW[0]      ; CLOCK_50   ; 0.313  ; 0.313  ; Rise       ; CLOCK_50        ;
+;  SW[13]     ; CLOCK_50   ; -2.111 ; -2.111 ; Rise       ; CLOCK_50        ;
+;  SW[14]     ; CLOCK_50   ; -2.523 ; -2.523 ; Rise       ; CLOCK_50        ;
+;  SW[15]     ; CLOCK_50   ; -2.721 ; -2.721 ; Rise       ; CLOCK_50        ;
+;  SW[16]     ; CLOCK_50   ; -2.487 ; -2.487 ; Rise       ; CLOCK_50        ;
+;  SW[17]     ; CLOCK_50   ; -2.513 ; -2.513 ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 5.841 ; 5.841 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[6]  ; CLOCK_50   ; 5.289 ; 5.289 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[8]  ; CLOCK_50   ; 4.558 ; 4.558 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[12] ; CLOCK_50   ; 5.035 ; 5.035 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[18] ; CLOCK_50   ; 4.436 ; 4.436 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[20] ; CLOCK_50   ; 5.795 ; 5.795 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[22] ; CLOCK_50   ; 4.961 ; 4.961 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[24] ; CLOCK_50   ; 5.750 ; 5.750 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[26] ; CLOCK_50   ; 5.654 ; 5.654 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[27] ; CLOCK_50   ; 5.841 ; 5.841 ; Rise       ; CLOCK_50        ;
+; HEX0[*]     ; CLOCK_50   ; 4.173 ; 4.173 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]    ; CLOCK_50   ; 4.164 ; 4.164 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]    ; CLOCK_50   ; 4.173 ; 4.173 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]    ; CLOCK_50   ; 4.173 ; 4.173 ; Rise       ; CLOCK_50        ;
+; HEX1[*]     ; CLOCK_50   ; 4.376 ; 4.376 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]    ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]    ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]    ; CLOCK_50   ; 4.376 ; 4.376 ; Rise       ; CLOCK_50        ;
+; HEX2[*]     ; CLOCK_50   ; 5.054 ; 5.054 ; Rise       ; CLOCK_50        ;
+;  HEX2[2]    ; CLOCK_50   ; 5.044 ; 5.044 ; Rise       ; CLOCK_50        ;
+;  HEX2[3]    ; CLOCK_50   ; 5.054 ; 5.054 ; Rise       ; CLOCK_50        ;
+;  HEX2[4]    ; CLOCK_50   ; 5.029 ; 5.029 ; Rise       ; CLOCK_50        ;
+; HEX3[*]     ; CLOCK_50   ; 5.183 ; 5.183 ; Rise       ; CLOCK_50        ;
+;  HEX3[0]    ; CLOCK_50   ; 4.992 ; 4.992 ; Rise       ; CLOCK_50        ;
+;  HEX3[2]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[3]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[4]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[6]    ; CLOCK_50   ; 5.183 ; 5.183 ; Rise       ; CLOCK_50        ;
+; HEX4[*]     ; CLOCK_50   ; 4.565 ; 4.565 ; Rise       ; CLOCK_50        ;
+;  HEX4[0]    ; CLOCK_50   ; 4.229 ; 4.229 ; Rise       ; CLOCK_50        ;
+;  HEX4[1]    ; CLOCK_50   ; 4.565 ; 4.565 ; Rise       ; CLOCK_50        ;
+;  HEX4[2]    ; CLOCK_50   ; 4.560 ; 4.560 ; Rise       ; CLOCK_50        ;
+;  HEX4[3]    ; CLOCK_50   ; 4.416 ; 4.416 ; Rise       ; CLOCK_50        ;
+;  HEX4[4]    ; CLOCK_50   ; 4.173 ; 4.173 ; Rise       ; CLOCK_50        ;
+;  HEX4[5]    ; CLOCK_50   ; 4.256 ; 4.256 ; Rise       ; CLOCK_50        ;
+;  HEX4[6]    ; CLOCK_50   ; 4.464 ; 4.464 ; Rise       ; CLOCK_50        ;
+; HEX5[*]     ; CLOCK_50   ; 4.927 ; 4.927 ; Rise       ; CLOCK_50        ;
+;  HEX5[0]    ; CLOCK_50   ; 4.434 ; 4.434 ; Rise       ; CLOCK_50        ;
+;  HEX5[1]    ; CLOCK_50   ; 4.411 ; 4.411 ; Rise       ; CLOCK_50        ;
+;  HEX5[2]    ; CLOCK_50   ; 4.136 ; 4.136 ; Rise       ; CLOCK_50        ;
+;  HEX5[3]    ; CLOCK_50   ; 4.927 ; 4.927 ; Rise       ; CLOCK_50        ;
+;  HEX5[4]    ; CLOCK_50   ; 4.429 ; 4.429 ; Rise       ; CLOCK_50        ;
+;  HEX5[5]    ; CLOCK_50   ; 4.429 ; 4.429 ; Rise       ; CLOCK_50        ;
+;  HEX5[6]    ; CLOCK_50   ; 4.564 ; 4.564 ; Rise       ; CLOCK_50        ;
+; HEX6[*]     ; CLOCK_50   ; 4.826 ; 4.826 ; Rise       ; CLOCK_50        ;
+;  HEX6[0]    ; CLOCK_50   ; 4.678 ; 4.678 ; Rise       ; CLOCK_50        ;
+;  HEX6[1]    ; CLOCK_50   ; 4.568 ; 4.568 ; Rise       ; CLOCK_50        ;
+;  HEX6[2]    ; CLOCK_50   ; 4.677 ; 4.677 ; Rise       ; CLOCK_50        ;
+;  HEX6[3]    ; CLOCK_50   ; 4.728 ; 4.728 ; Rise       ; CLOCK_50        ;
+;  HEX6[4]    ; CLOCK_50   ; 4.826 ; 4.826 ; Rise       ; CLOCK_50        ;
+;  HEX6[5]    ; CLOCK_50   ; 4.778 ; 4.778 ; Rise       ; CLOCK_50        ;
+;  HEX6[6]    ; CLOCK_50   ; 4.747 ; 4.747 ; Rise       ; CLOCK_50        ;
+; HEX7[*]     ; CLOCK_50   ; 5.473 ; 5.473 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]    ; CLOCK_50   ; 4.570 ; 4.570 ; Rise       ; CLOCK_50        ;
+;  HEX7[1]    ; CLOCK_50   ; 4.666 ; 4.666 ; Rise       ; CLOCK_50        ;
+;  HEX7[2]    ; CLOCK_50   ; 5.415 ; 5.415 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]    ; CLOCK_50   ; 5.473 ; 5.473 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]    ; CLOCK_50   ; 5.415 ; 5.415 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]    ; CLOCK_50   ; 4.792 ; 4.792 ; Rise       ; CLOCK_50        ;
+;  HEX7[6]    ; CLOCK_50   ; 5.320 ; 5.320 ; Rise       ; CLOCK_50        ;
+; LEDG[*]     ; CLOCK_50   ; 5.669 ; 5.669 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]    ; CLOCK_50   ; 5.669 ; 5.669 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]    ; CLOCK_50   ; 4.946 ; 4.946 ; Rise       ; CLOCK_50        ;
+;  LEDG[5]    ; CLOCK_50   ; 5.024 ; 5.024 ; Rise       ; CLOCK_50        ;
+;  LEDG[6]    ; CLOCK_50   ; 4.959 ; 4.959 ; Rise       ; CLOCK_50        ;
+; LEDR[*]     ; CLOCK_50   ; 4.960 ; 4.960 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]    ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]    ; CLOCK_50   ; 4.287 ; 4.287 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]    ; CLOCK_50   ; 4.196 ; 4.196 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]    ; CLOCK_50   ; 3.633 ; 3.633 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]    ; CLOCK_50   ; 3.645 ; 3.645 ; Rise       ; CLOCK_50        ;
+;  LEDR[10]   ; CLOCK_50   ; 3.645 ; 3.645 ; Rise       ; CLOCK_50        ;
+;  LEDR[11]   ; CLOCK_50   ; 3.642 ; 3.642 ; Rise       ; CLOCK_50        ;
+;  LEDR[16]   ; CLOCK_50   ; 4.949 ; 4.949 ; Rise       ; CLOCK_50        ;
+;  LEDR[17]   ; CLOCK_50   ; 4.960 ; 4.960 ; Rise       ; CLOCK_50        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 4.276 ; 4.276 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[6]  ; CLOCK_50   ; 5.160 ; 5.160 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[8]  ; CLOCK_50   ; 4.558 ; 4.558 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[12] ; CLOCK_50   ; 4.944 ; 4.944 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[18] ; CLOCK_50   ; 4.276 ; 4.276 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[20] ; CLOCK_50   ; 5.363 ; 5.363 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[22] ; CLOCK_50   ; 4.826 ; 4.826 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[24] ; CLOCK_50   ; 5.308 ; 5.308 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[26] ; CLOCK_50   ; 4.953 ; 4.953 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[27] ; CLOCK_50   ; 5.233 ; 5.233 ; Rise       ; CLOCK_50        ;
+; HEX0[*]     ; CLOCK_50   ; 4.164 ; 4.164 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]    ; CLOCK_50   ; 4.164 ; 4.164 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]    ; CLOCK_50   ; 4.173 ; 4.173 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]    ; CLOCK_50   ; 4.173 ; 4.173 ; Rise       ; CLOCK_50        ;
+; HEX1[*]     ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]    ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]    ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]    ; CLOCK_50   ; 4.376 ; 4.376 ; Rise       ; CLOCK_50        ;
+; HEX2[*]     ; CLOCK_50   ; 5.029 ; 5.029 ; Rise       ; CLOCK_50        ;
+;  HEX2[2]    ; CLOCK_50   ; 5.044 ; 5.044 ; Rise       ; CLOCK_50        ;
+;  HEX2[3]    ; CLOCK_50   ; 5.054 ; 5.054 ; Rise       ; CLOCK_50        ;
+;  HEX2[4]    ; CLOCK_50   ; 5.029 ; 5.029 ; Rise       ; CLOCK_50        ;
+; HEX3[*]     ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[0]    ; CLOCK_50   ; 4.911 ; 4.911 ; Rise       ; CLOCK_50        ;
+;  HEX3[2]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[3]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[4]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[6]    ; CLOCK_50   ; 5.092 ; 5.092 ; Rise       ; CLOCK_50        ;
+; HEX4[*]     ; CLOCK_50   ; 4.044 ; 4.044 ; Rise       ; CLOCK_50        ;
+;  HEX4[0]    ; CLOCK_50   ; 4.100 ; 4.100 ; Rise       ; CLOCK_50        ;
+;  HEX4[1]    ; CLOCK_50   ; 4.436 ; 4.436 ; Rise       ; CLOCK_50        ;
+;  HEX4[2]    ; CLOCK_50   ; 4.424 ; 4.424 ; Rise       ; CLOCK_50        ;
+;  HEX4[3]    ; CLOCK_50   ; 4.287 ; 4.287 ; Rise       ; CLOCK_50        ;
+;  HEX4[4]    ; CLOCK_50   ; 4.044 ; 4.044 ; Rise       ; CLOCK_50        ;
+;  HEX4[5]    ; CLOCK_50   ; 4.120 ; 4.120 ; Rise       ; CLOCK_50        ;
+;  HEX4[6]    ; CLOCK_50   ; 4.335 ; 4.335 ; Rise       ; CLOCK_50        ;
+; HEX5[*]     ; CLOCK_50   ; 3.997 ; 3.997 ; Rise       ; CLOCK_50        ;
+;  HEX5[0]    ; CLOCK_50   ; 4.302 ; 4.302 ; Rise       ; CLOCK_50        ;
+;  HEX5[1]    ; CLOCK_50   ; 4.278 ; 4.278 ; Rise       ; CLOCK_50        ;
+;  HEX5[2]    ; CLOCK_50   ; 3.997 ; 3.997 ; Rise       ; CLOCK_50        ;
+;  HEX5[3]    ; CLOCK_50   ; 4.795 ; 4.795 ; Rise       ; CLOCK_50        ;
+;  HEX5[4]    ; CLOCK_50   ; 4.297 ; 4.297 ; Rise       ; CLOCK_50        ;
+;  HEX5[5]    ; CLOCK_50   ; 4.297 ; 4.297 ; Rise       ; CLOCK_50        ;
+;  HEX5[6]    ; CLOCK_50   ; 4.431 ; 4.431 ; Rise       ; CLOCK_50        ;
+; HEX6[*]     ; CLOCK_50   ; 4.308 ; 4.308 ; Rise       ; CLOCK_50        ;
+;  HEX6[0]    ; CLOCK_50   ; 4.416 ; 4.416 ; Rise       ; CLOCK_50        ;
+;  HEX6[1]    ; CLOCK_50   ; 4.308 ; 4.308 ; Rise       ; CLOCK_50        ;
+;  HEX6[2]    ; CLOCK_50   ; 4.416 ; 4.416 ; Rise       ; CLOCK_50        ;
+;  HEX6[3]    ; CLOCK_50   ; 4.471 ; 4.471 ; Rise       ; CLOCK_50        ;
+;  HEX6[4]    ; CLOCK_50   ; 4.567 ; 4.567 ; Rise       ; CLOCK_50        ;
+;  HEX6[5]    ; CLOCK_50   ; 4.524 ; 4.524 ; Rise       ; CLOCK_50        ;
+;  HEX6[6]    ; CLOCK_50   ; 4.491 ; 4.491 ; Rise       ; CLOCK_50        ;
+; HEX7[*]     ; CLOCK_50   ; 4.570 ; 4.570 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]    ; CLOCK_50   ; 4.570 ; 4.570 ; Rise       ; CLOCK_50        ;
+;  HEX7[1]    ; CLOCK_50   ; 4.592 ; 4.592 ; Rise       ; CLOCK_50        ;
+;  HEX7[2]    ; CLOCK_50   ; 4.714 ; 4.714 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]    ; CLOCK_50   ; 4.865 ; 4.865 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]    ; CLOCK_50   ; 4.714 ; 4.714 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]    ; CLOCK_50   ; 4.718 ; 4.718 ; Rise       ; CLOCK_50        ;
+;  HEX7[6]    ; CLOCK_50   ; 4.878 ; 4.878 ; Rise       ; CLOCK_50        ;
+; LEDG[*]     ; CLOCK_50   ; 4.799 ; 4.799 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]    ; CLOCK_50   ; 5.237 ; 5.237 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]    ; CLOCK_50   ; 4.811 ; 4.811 ; Rise       ; CLOCK_50        ;
+;  LEDG[5]    ; CLOCK_50   ; 4.895 ; 4.895 ; Rise       ; CLOCK_50        ;
+;  LEDG[6]    ; CLOCK_50   ; 4.799 ; 4.799 ; Rise       ; CLOCK_50        ;
+; LEDR[*]     ; CLOCK_50   ; 3.633 ; 3.633 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]    ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]    ; CLOCK_50   ; 4.287 ; 4.287 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]    ; CLOCK_50   ; 4.196 ; 4.196 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]    ; CLOCK_50   ; 3.633 ; 3.633 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]    ; CLOCK_50   ; 3.645 ; 3.645 ; Rise       ; CLOCK_50        ;
+;  LEDR[10]   ; CLOCK_50   ; 3.645 ; 3.645 ; Rise       ; CLOCK_50        ;
+;  LEDR[11]   ; CLOCK_50   ; 3.642 ; 3.642 ; Rise       ; CLOCK_50        ;
+;  LEDR[16]   ; CLOCK_50   ; 4.949 ; 4.949 ; Rise       ; CLOCK_50        ;
+;  LEDR[17]   ; CLOCK_50   ; 4.960 ; 4.960 ; Rise       ; CLOCK_50        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; GPIO_1[1]  ; LEDG[4]     ; 6.120 ;       ;       ; 6.120 ;
+; GPIO_1[11] ; LEDG[7]     ; 5.917 ;       ;       ; 5.917 ;
+; GPIO_1[15] ; LEDR[16]    ; 6.462 ;       ;       ; 6.462 ;
+; GPIO_1[15] ; LEDR[17]    ; 6.445 ;       ;       ; 6.445 ;
+; KEY[2]     ; LEDG[7]     ;       ; 5.849 ; 5.849 ;       ;
+; KEY[3]     ; LEDG[4]     ;       ; 6.315 ; 6.315 ;       ;
+; SW[0]      ; LEDG[4]     ; 3.766 ; 3.766 ; 3.766 ; 3.766 ;
+; SW[0]      ; LEDG[7]     ; 3.498 ; 3.498 ; 3.498 ; 3.498 ;
+; SW[0]      ; LEDR[16]    ; 3.985 ; 3.985 ; 3.985 ; 3.985 ;
+; SW[0]      ; LEDR[17]    ; 3.971 ; 3.971 ; 3.971 ; 3.971 ;
+; SW[13]     ; LEDR[16]    ; 6.407 ;       ;       ; 6.407 ;
+; SW[13]     ; LEDR[17]    ; 6.394 ;       ;       ; 6.394 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; GPIO_1[1]  ; LEDG[4]     ; 6.120 ;       ;       ; 6.120 ;
+; GPIO_1[11] ; LEDG[7]     ; 5.917 ;       ;       ; 5.917 ;
+; GPIO_1[15] ; LEDR[16]    ; 6.462 ;       ;       ; 6.462 ;
+; GPIO_1[15] ; LEDR[17]    ; 6.445 ;       ;       ; 6.445 ;
+; KEY[2]     ; LEDG[7]     ;       ; 5.849 ; 5.849 ;       ;
+; KEY[3]     ; LEDG[4]     ;       ; 6.315 ; 6.315 ;       ;
+; SW[0]      ; LEDG[4]     ; 3.766 ; 3.766 ; 3.766 ; 3.766 ;
+; SW[0]      ; LEDG[7]     ; 3.498 ; 3.498 ; 3.498 ; 3.498 ;
+; SW[0]      ; LEDR[16]    ; 3.985 ; 3.985 ; 3.985 ; 3.985 ;
+; SW[0]      ; LEDR[17]    ; 3.971 ; 3.971 ; 3.971 ; 3.971 ;
+; SW[13]     ; LEDR[16]    ; 6.407 ;       ;       ; 6.407 ;
+; SW[13]     ; LEDR[17]    ; 6.394 ;       ;       ; 6.394 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -5.367   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  CLOCK_50        ; -5.367   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -599.704 ; 0.0   ; 0.0      ; 0.0     ; -166.38             ;
+;  CLOCK_50        ; -599.704 ; 0.000 ; N/A      ; N/A     ; -166.380            ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 10.222 ; 10.222 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[1]  ; CLOCK_50   ; 7.336  ; 7.336  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[3]  ; CLOCK_50   ; 7.894  ; 7.894  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[5]  ; CLOCK_50   ; 8.785  ; 8.785  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[11] ; CLOCK_50   ; 6.056  ; 6.056  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[15] ; CLOCK_50   ; 4.991  ; 4.991  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[17] ; CLOCK_50   ; 9.311  ; 9.311  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[19] ; CLOCK_50   ; 10.222 ; 10.222 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[23] ; CLOCK_50   ; 7.860  ; 7.860  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[25] ; CLOCK_50   ; 9.223  ; 9.223  ; Rise       ; CLOCK_50        ;
+; KEY[*]      ; CLOCK_50   ; 8.754  ; 8.754  ; Rise       ; CLOCK_50        ;
+;  KEY[0]     ; CLOCK_50   ; 8.754  ; 8.754  ; Rise       ; CLOCK_50        ;
+;  KEY[1]     ; CLOCK_50   ; 8.014  ; 8.014  ; Rise       ; CLOCK_50        ;
+;  KEY[2]     ; CLOCK_50   ; 5.914  ; 5.914  ; Rise       ; CLOCK_50        ;
+;  KEY[3]     ; CLOCK_50   ; 7.769  ; 7.769  ; Rise       ; CLOCK_50        ;
+; SW[*]       ; CLOCK_50   ; 10.007 ; 10.007 ; Rise       ; CLOCK_50        ;
+;  SW[0]      ; CLOCK_50   ; 6.355  ; 6.355  ; Rise       ; CLOCK_50        ;
+;  SW[13]     ; CLOCK_50   ; 4.889  ; 4.889  ; Rise       ; CLOCK_50        ;
+;  SW[14]     ; CLOCK_50   ; 8.970  ; 8.970  ; Rise       ; CLOCK_50        ;
+;  SW[15]     ; CLOCK_50   ; 10.007 ; 10.007 ; Rise       ; CLOCK_50        ;
+;  SW[16]     ; CLOCK_50   ; 7.763  ; 7.763  ; Rise       ; CLOCK_50        ;
+;  SW[17]     ; CLOCK_50   ; 8.609  ; 8.609  ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; -2.164 ; -2.164 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[1]  ; CLOCK_50   ; -2.611 ; -2.611 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[3]  ; CLOCK_50   ; -3.807 ; -3.807 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[5]  ; CLOCK_50   ; -2.955 ; -2.955 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[11] ; CLOCK_50   ; -2.962 ; -2.962 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[15] ; CLOCK_50   ; -2.164 ; -2.164 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[17] ; CLOCK_50   ; -2.729 ; -2.729 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[19] ; CLOCK_50   ; -2.847 ; -2.847 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[23] ; CLOCK_50   ; -2.526 ; -2.526 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[25] ; CLOCK_50   ; -2.830 ; -2.830 ; Rise       ; CLOCK_50        ;
+; KEY[*]      ; CLOCK_50   ; -2.806 ; -2.806 ; Rise       ; CLOCK_50        ;
+;  KEY[0]     ; CLOCK_50   ; -2.946 ; -2.946 ; Rise       ; CLOCK_50        ;
+;  KEY[1]     ; CLOCK_50   ; -3.851 ; -3.851 ; Rise       ; CLOCK_50        ;
+;  KEY[2]     ; CLOCK_50   ; -2.894 ; -2.894 ; Rise       ; CLOCK_50        ;
+;  KEY[3]     ; CLOCK_50   ; -2.806 ; -2.806 ; Rise       ; CLOCK_50        ;
+; SW[*]       ; CLOCK_50   ; 0.313  ; 0.313  ; Rise       ; CLOCK_50        ;
+;  SW[0]      ; CLOCK_50   ; 0.313  ; 0.313  ; Rise       ; CLOCK_50        ;
+;  SW[13]     ; CLOCK_50   ; -2.111 ; -2.111 ; Rise       ; CLOCK_50        ;
+;  SW[14]     ; CLOCK_50   ; -2.523 ; -2.523 ; Rise       ; CLOCK_50        ;
+;  SW[15]     ; CLOCK_50   ; -2.721 ; -2.721 ; Rise       ; CLOCK_50        ;
+;  SW[16]     ; CLOCK_50   ; -2.487 ; -2.487 ; Rise       ; CLOCK_50        ;
+;  SW[17]     ; CLOCK_50   ; -2.513 ; -2.513 ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 11.346 ; 11.346 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[6]  ; CLOCK_50   ; 9.885  ; 9.885  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[8]  ; CLOCK_50   ; 8.458  ; 8.458  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[12] ; CLOCK_50   ; 9.324  ; 9.324  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[18] ; CLOCK_50   ; 8.181  ; 8.181  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[20] ; CLOCK_50   ; 10.918 ; 10.918 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[22] ; CLOCK_50   ; 9.116  ; 9.116  ; Rise       ; CLOCK_50        ;
+;  GPIO_1[24] ; CLOCK_50   ; 11.133 ; 11.133 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[26] ; CLOCK_50   ; 10.887 ; 10.887 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[27] ; CLOCK_50   ; 11.346 ; 11.346 ; Rise       ; CLOCK_50        ;
+; HEX0[*]     ; CLOCK_50   ; 7.400  ; 7.400  ; Rise       ; CLOCK_50        ;
+;  HEX0[2]    ; CLOCK_50   ; 7.391  ; 7.391  ; Rise       ; CLOCK_50        ;
+;  HEX0[3]    ; CLOCK_50   ; 7.400  ; 7.400  ; Rise       ; CLOCK_50        ;
+;  HEX0[4]    ; CLOCK_50   ; 7.400  ; 7.400  ; Rise       ; CLOCK_50        ;
+; HEX1[*]     ; CLOCK_50   ; 7.860  ; 7.860  ; Rise       ; CLOCK_50        ;
+;  HEX1[2]    ; CLOCK_50   ; 7.840  ; 7.840  ; Rise       ; CLOCK_50        ;
+;  HEX1[3]    ; CLOCK_50   ; 7.840  ; 7.840  ; Rise       ; CLOCK_50        ;
+;  HEX1[4]    ; CLOCK_50   ; 7.860  ; 7.860  ; Rise       ; CLOCK_50        ;
+; HEX2[*]     ; CLOCK_50   ; 9.276  ; 9.276  ; Rise       ; CLOCK_50        ;
+;  HEX2[2]    ; CLOCK_50   ; 9.266  ; 9.266  ; Rise       ; CLOCK_50        ;
+;  HEX2[3]    ; CLOCK_50   ; 9.276  ; 9.276  ; Rise       ; CLOCK_50        ;
+;  HEX2[4]    ; CLOCK_50   ; 9.251  ; 9.251  ; Rise       ; CLOCK_50        ;
+; HEX3[*]     ; CLOCK_50   ; 9.642  ; 9.642  ; Rise       ; CLOCK_50        ;
+;  HEX3[0]    ; CLOCK_50   ; 9.284  ; 9.284  ; Rise       ; CLOCK_50        ;
+;  HEX3[2]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[3]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[4]    ; CLOCK_50   ; 8.797  ; 8.797  ; Rise       ; CLOCK_50        ;
+;  HEX3[6]    ; CLOCK_50   ; 9.642  ; 9.642  ; Rise       ; CLOCK_50        ;
+; HEX4[*]     ; CLOCK_50   ; 8.530  ; 8.530  ; Rise       ; CLOCK_50        ;
+;  HEX4[0]    ; CLOCK_50   ; 7.737  ; 7.737  ; Rise       ; CLOCK_50        ;
+;  HEX4[1]    ; CLOCK_50   ; 8.530  ; 8.530  ; Rise       ; CLOCK_50        ;
+;  HEX4[2]    ; CLOCK_50   ; 8.481  ; 8.481  ; Rise       ; CLOCK_50        ;
+;  HEX4[3]    ; CLOCK_50   ; 8.221  ; 8.221  ; Rise       ; CLOCK_50        ;
+;  HEX4[4]    ; CLOCK_50   ; 7.567  ; 7.567  ; Rise       ; CLOCK_50        ;
+;  HEX4[5]    ; CLOCK_50   ; 7.726  ; 7.726  ; Rise       ; CLOCK_50        ;
+;  HEX4[6]    ; CLOCK_50   ; 8.244  ; 8.244  ; Rise       ; CLOCK_50        ;
+; HEX5[*]     ; CLOCK_50   ; 9.022  ; 9.022  ; Rise       ; CLOCK_50        ;
+;  HEX5[0]    ; CLOCK_50   ; 8.207  ; 8.207  ; Rise       ; CLOCK_50        ;
+;  HEX5[1]    ; CLOCK_50   ; 8.210  ; 8.210  ; Rise       ; CLOCK_50        ;
+;  HEX5[2]    ; CLOCK_50   ; 7.512  ; 7.512  ; Rise       ; CLOCK_50        ;
+;  HEX5[3]    ; CLOCK_50   ; 9.022  ; 9.022  ; Rise       ; CLOCK_50        ;
+;  HEX5[4]    ; CLOCK_50   ; 8.189  ; 8.189  ; Rise       ; CLOCK_50        ;
+;  HEX5[5]    ; CLOCK_50   ; 8.178  ; 8.178  ; Rise       ; CLOCK_50        ;
+;  HEX5[6]    ; CLOCK_50   ; 8.525  ; 8.525  ; Rise       ; CLOCK_50        ;
+; HEX6[*]     ; CLOCK_50   ; 8.980  ; 8.980  ; Rise       ; CLOCK_50        ;
+;  HEX6[0]    ; CLOCK_50   ; 8.761  ; 8.761  ; Rise       ; CLOCK_50        ;
+;  HEX6[1]    ; CLOCK_50   ; 8.499  ; 8.499  ; Rise       ; CLOCK_50        ;
+;  HEX6[2]    ; CLOCK_50   ; 8.774  ; 8.774  ; Rise       ; CLOCK_50        ;
+;  HEX6[3]    ; CLOCK_50   ; 8.757  ; 8.757  ; Rise       ; CLOCK_50        ;
+;  HEX6[4]    ; CLOCK_50   ; 8.980  ; 8.980  ; Rise       ; CLOCK_50        ;
+;  HEX6[5]    ; CLOCK_50   ; 8.868  ; 8.868  ; Rise       ; CLOCK_50        ;
+;  HEX6[6]    ; CLOCK_50   ; 8.853  ; 8.853  ; Rise       ; CLOCK_50        ;
+; HEX7[*]     ; CLOCK_50   ; 10.412 ; 10.412 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]    ; CLOCK_50   ; 8.433  ; 8.433  ; Rise       ; CLOCK_50        ;
+;  HEX7[1]    ; CLOCK_50   ; 8.541  ; 8.541  ; Rise       ; CLOCK_50        ;
+;  HEX7[2]    ; CLOCK_50   ; 10.310 ; 10.310 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]    ; CLOCK_50   ; 10.412 ; 10.412 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]    ; CLOCK_50   ; 10.310 ; 10.310 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]    ; CLOCK_50   ; 8.823  ; 8.823  ; Rise       ; CLOCK_50        ;
+;  HEX7[6]    ; CLOCK_50   ; 10.175 ; 10.175 ; Rise       ; CLOCK_50        ;
+; LEDG[*]     ; CLOCK_50   ; 10.613 ; 10.613 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]    ; CLOCK_50   ; 10.613 ; 10.613 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]    ; CLOCK_50   ; 9.000  ; 9.000  ; Rise       ; CLOCK_50        ;
+;  LEDG[5]    ; CLOCK_50   ; 9.275  ; 9.275  ; Rise       ; CLOCK_50        ;
+;  LEDG[6]    ; CLOCK_50   ; 9.147  ; 9.147  ; Rise       ; CLOCK_50        ;
+; LEDR[*]     ; CLOCK_50   ; 9.140  ; 9.140  ; Rise       ; CLOCK_50        ;
+;  LEDR[5]    ; CLOCK_50   ; 8.001  ; 8.001  ; Rise       ; CLOCK_50        ;
+;  LEDR[6]    ; CLOCK_50   ; 7.726  ; 7.726  ; Rise       ; CLOCK_50        ;
+;  LEDR[7]    ; CLOCK_50   ; 7.507  ; 7.507  ; Rise       ; CLOCK_50        ;
+;  LEDR[8]    ; CLOCK_50   ; 6.358  ; 6.358  ; Rise       ; CLOCK_50        ;
+;  LEDR[9]    ; CLOCK_50   ; 6.370  ; 6.370  ; Rise       ; CLOCK_50        ;
+;  LEDR[10]   ; CLOCK_50   ; 6.370  ; 6.370  ; Rise       ; CLOCK_50        ;
+;  LEDR[11]   ; CLOCK_50   ; 6.362  ; 6.362  ; Rise       ; CLOCK_50        ;
+;  LEDR[16]   ; CLOCK_50   ; 9.140  ; 9.140  ; Rise       ; CLOCK_50        ;
+;  LEDR[17]   ; CLOCK_50   ; 9.117  ; 9.117  ; Rise       ; CLOCK_50        ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; GPIO_1[*]   ; CLOCK_50   ; 4.276 ; 4.276 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[6]  ; CLOCK_50   ; 5.160 ; 5.160 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[8]  ; CLOCK_50   ; 4.558 ; 4.558 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[12] ; CLOCK_50   ; 4.944 ; 4.944 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[18] ; CLOCK_50   ; 4.276 ; 4.276 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[20] ; CLOCK_50   ; 5.363 ; 5.363 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[22] ; CLOCK_50   ; 4.826 ; 4.826 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[24] ; CLOCK_50   ; 5.308 ; 5.308 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[26] ; CLOCK_50   ; 4.953 ; 4.953 ; Rise       ; CLOCK_50        ;
+;  GPIO_1[27] ; CLOCK_50   ; 5.233 ; 5.233 ; Rise       ; CLOCK_50        ;
+; HEX0[*]     ; CLOCK_50   ; 4.164 ; 4.164 ; Rise       ; CLOCK_50        ;
+;  HEX0[2]    ; CLOCK_50   ; 4.164 ; 4.164 ; Rise       ; CLOCK_50        ;
+;  HEX0[3]    ; CLOCK_50   ; 4.173 ; 4.173 ; Rise       ; CLOCK_50        ;
+;  HEX0[4]    ; CLOCK_50   ; 4.173 ; 4.173 ; Rise       ; CLOCK_50        ;
+; HEX1[*]     ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  HEX1[2]    ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  HEX1[3]    ; CLOCK_50   ; 4.356 ; 4.356 ; Rise       ; CLOCK_50        ;
+;  HEX1[4]    ; CLOCK_50   ; 4.376 ; 4.376 ; Rise       ; CLOCK_50        ;
+; HEX2[*]     ; CLOCK_50   ; 5.029 ; 5.029 ; Rise       ; CLOCK_50        ;
+;  HEX2[2]    ; CLOCK_50   ; 5.044 ; 5.044 ; Rise       ; CLOCK_50        ;
+;  HEX2[3]    ; CLOCK_50   ; 5.054 ; 5.054 ; Rise       ; CLOCK_50        ;
+;  HEX2[4]    ; CLOCK_50   ; 5.029 ; 5.029 ; Rise       ; CLOCK_50        ;
+; HEX3[*]     ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[0]    ; CLOCK_50   ; 4.911 ; 4.911 ; Rise       ; CLOCK_50        ;
+;  HEX3[2]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[3]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[4]    ; CLOCK_50   ; 4.732 ; 4.732 ; Rise       ; CLOCK_50        ;
+;  HEX3[6]    ; CLOCK_50   ; 5.092 ; 5.092 ; Rise       ; CLOCK_50        ;
+; HEX4[*]     ; CLOCK_50   ; 4.044 ; 4.044 ; Rise       ; CLOCK_50        ;
+;  HEX4[0]    ; CLOCK_50   ; 4.100 ; 4.100 ; Rise       ; CLOCK_50        ;
+;  HEX4[1]    ; CLOCK_50   ; 4.436 ; 4.436 ; Rise       ; CLOCK_50        ;
+;  HEX4[2]    ; CLOCK_50   ; 4.424 ; 4.424 ; Rise       ; CLOCK_50        ;
+;  HEX4[3]    ; CLOCK_50   ; 4.287 ; 4.287 ; Rise       ; CLOCK_50        ;
+;  HEX4[4]    ; CLOCK_50   ; 4.044 ; 4.044 ; Rise       ; CLOCK_50        ;
+;  HEX4[5]    ; CLOCK_50   ; 4.120 ; 4.120 ; Rise       ; CLOCK_50        ;
+;  HEX4[6]    ; CLOCK_50   ; 4.335 ; 4.335 ; Rise       ; CLOCK_50        ;
+; HEX5[*]     ; CLOCK_50   ; 3.997 ; 3.997 ; Rise       ; CLOCK_50        ;
+;  HEX5[0]    ; CLOCK_50   ; 4.302 ; 4.302 ; Rise       ; CLOCK_50        ;
+;  HEX5[1]    ; CLOCK_50   ; 4.278 ; 4.278 ; Rise       ; CLOCK_50        ;
+;  HEX5[2]    ; CLOCK_50   ; 3.997 ; 3.997 ; Rise       ; CLOCK_50        ;
+;  HEX5[3]    ; CLOCK_50   ; 4.795 ; 4.795 ; Rise       ; CLOCK_50        ;
+;  HEX5[4]    ; CLOCK_50   ; 4.297 ; 4.297 ; Rise       ; CLOCK_50        ;
+;  HEX5[5]    ; CLOCK_50   ; 4.297 ; 4.297 ; Rise       ; CLOCK_50        ;
+;  HEX5[6]    ; CLOCK_50   ; 4.431 ; 4.431 ; Rise       ; CLOCK_50        ;
+; HEX6[*]     ; CLOCK_50   ; 4.308 ; 4.308 ; Rise       ; CLOCK_50        ;
+;  HEX6[0]    ; CLOCK_50   ; 4.416 ; 4.416 ; Rise       ; CLOCK_50        ;
+;  HEX6[1]    ; CLOCK_50   ; 4.308 ; 4.308 ; Rise       ; CLOCK_50        ;
+;  HEX6[2]    ; CLOCK_50   ; 4.416 ; 4.416 ; Rise       ; CLOCK_50        ;
+;  HEX6[3]    ; CLOCK_50   ; 4.471 ; 4.471 ; Rise       ; CLOCK_50        ;
+;  HEX6[4]    ; CLOCK_50   ; 4.567 ; 4.567 ; Rise       ; CLOCK_50        ;
+;  HEX6[5]    ; CLOCK_50   ; 4.524 ; 4.524 ; Rise       ; CLOCK_50        ;
+;  HEX6[6]    ; CLOCK_50   ; 4.491 ; 4.491 ; Rise       ; CLOCK_50        ;
+; HEX7[*]     ; CLOCK_50   ; 4.570 ; 4.570 ; Rise       ; CLOCK_50        ;
+;  HEX7[0]    ; CLOCK_50   ; 4.570 ; 4.570 ; Rise       ; CLOCK_50        ;
+;  HEX7[1]    ; CLOCK_50   ; 4.592 ; 4.592 ; Rise       ; CLOCK_50        ;
+;  HEX7[2]    ; CLOCK_50   ; 4.714 ; 4.714 ; Rise       ; CLOCK_50        ;
+;  HEX7[3]    ; CLOCK_50   ; 4.865 ; 4.865 ; Rise       ; CLOCK_50        ;
+;  HEX7[4]    ; CLOCK_50   ; 4.714 ; 4.714 ; Rise       ; CLOCK_50        ;
+;  HEX7[5]    ; CLOCK_50   ; 4.718 ; 4.718 ; Rise       ; CLOCK_50        ;
+;  HEX7[6]    ; CLOCK_50   ; 4.878 ; 4.878 ; Rise       ; CLOCK_50        ;
+; LEDG[*]     ; CLOCK_50   ; 4.799 ; 4.799 ; Rise       ; CLOCK_50        ;
+;  LEDG[2]    ; CLOCK_50   ; 5.237 ; 5.237 ; Rise       ; CLOCK_50        ;
+;  LEDG[3]    ; CLOCK_50   ; 4.811 ; 4.811 ; Rise       ; CLOCK_50        ;
+;  LEDG[5]    ; CLOCK_50   ; 4.895 ; 4.895 ; Rise       ; CLOCK_50        ;
+;  LEDG[6]    ; CLOCK_50   ; 4.799 ; 4.799 ; Rise       ; CLOCK_50        ;
+; LEDR[*]     ; CLOCK_50   ; 3.633 ; 3.633 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]    ; CLOCK_50   ; 4.394 ; 4.394 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]    ; CLOCK_50   ; 4.287 ; 4.287 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]    ; CLOCK_50   ; 4.196 ; 4.196 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]    ; CLOCK_50   ; 3.633 ; 3.633 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]    ; CLOCK_50   ; 3.645 ; 3.645 ; Rise       ; CLOCK_50        ;
+;  LEDR[10]   ; CLOCK_50   ; 3.645 ; 3.645 ; Rise       ; CLOCK_50        ;
+;  LEDR[11]   ; CLOCK_50   ; 3.642 ; 3.642 ; Rise       ; CLOCK_50        ;
+;  LEDR[16]   ; CLOCK_50   ; 4.949 ; 4.949 ; Rise       ; CLOCK_50        ;
+;  LEDR[17]   ; CLOCK_50   ; 4.960 ; 4.960 ; Rise       ; CLOCK_50        ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; GPIO_1[1]  ; LEDG[4]     ; 11.019 ;        ;        ; 11.019 ;
+; GPIO_1[11] ; LEDG[7]     ; 10.776 ;        ;        ; 10.776 ;
+; GPIO_1[15] ; LEDR[16]    ; 11.769 ;        ;        ; 11.769 ;
+; GPIO_1[15] ; LEDR[17]    ; 11.747 ;        ;        ; 11.747 ;
+; KEY[2]     ; LEDG[7]     ;        ; 10.634 ; 10.634 ;        ;
+; KEY[3]     ; LEDG[4]     ;        ; 11.452 ; 11.452 ;        ;
+; SW[0]      ; LEDG[4]     ; 7.304  ; 7.304  ; 7.304  ; 7.304  ;
+; SW[0]      ; LEDG[7]     ; 6.842  ; 6.842  ; 6.842  ; 6.842  ;
+; SW[0]      ; LEDR[16]    ; 7.631  ; 7.631  ; 7.631  ; 7.631  ;
+; SW[0]      ; LEDR[17]    ; 7.609  ; 7.609  ; 7.609  ; 7.609  ;
+; SW[13]     ; LEDR[16]    ; 11.660 ;        ;        ; 11.660 ;
+; SW[13]     ; LEDR[17]    ; 11.638 ;        ;        ; 11.638 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; GPIO_1[1]  ; LEDG[4]     ; 6.120 ;       ;       ; 6.120 ;
+; GPIO_1[11] ; LEDG[7]     ; 5.917 ;       ;       ; 5.917 ;
+; GPIO_1[15] ; LEDR[16]    ; 6.462 ;       ;       ; 6.462 ;
+; GPIO_1[15] ; LEDR[17]    ; 6.445 ;       ;       ; 6.445 ;
+; KEY[2]     ; LEDG[7]     ;       ; 5.849 ; 5.849 ;       ;
+; KEY[3]     ; LEDG[4]     ;       ; 6.315 ; 6.315 ;       ;
+; SW[0]      ; LEDG[4]     ; 3.766 ; 3.766 ; 3.766 ; 3.766 ;
+; SW[0]      ; LEDG[7]     ; 3.498 ; 3.498 ; 3.498 ; 3.498 ;
+; SW[0]      ; LEDR[16]    ; 3.985 ; 3.985 ; 3.985 ; 3.985 ;
+; SW[0]      ; LEDR[17]    ; 3.971 ; 3.971 ; 3.971 ; 3.971 ;
+; SW[13]     ; LEDR[16]    ; 6.407 ;       ;       ; 6.407 ;
+; SW[13]     ; LEDR[17]    ; 6.394 ;       ;       ; 6.394 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 36068    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 36068    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 19    ; 19   ;
+; Unconstrained Input Port Paths  ; 330   ; 330  ;
+; Unconstrained Output Ports      ; 66    ; 66   ;
+; Unconstrained Output Port Paths ; 276   ; 276  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Copyright (C) 1991-2013 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, Altera MegaCore Function License 
+    Info: Agreement, or other applicable license agreement, including, 
+    Info: without limitation, that your use is for the sole purpose of 
+    Info: programming logic devices manufactured by Altera and sold by 
+    Info: Altera or its authorized distributors.  Please refer to the 
+    Info: applicable agreement for further details.
+    Info: Processing started: Mon Sep  4 15:29:35 2023
+Info: Command: quartus_sta Example-Project
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Example-Project.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "comb_133|dirty_water_base~0|combout"
+    Warning (332126): Node "comb_133|dirty_water_base~0|datab"
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.367
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.367      -599.704 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -166.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.839
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.839      -183.095 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -166.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 518 megabytes
+    Info: Processing ended: Mon Sep  4 15:29:36 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
