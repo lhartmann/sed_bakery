@@ -1,8 +1,4 @@
-Se for solicitado login antes de qualquer tela, então use `aluno` como usuário e `PRPT0ilwBw5ccRoC` como senha.
-
-[Acesso ao OpenPLC](https://aluno:PRPT0ilwBw5ccRoC@sed.lcsvh.com/)\: Quando aparecer a tela de login do OpenPLC, utilize também o usuário e senha `openplc`.
-
-[Acesso à webcam](https://aluno:PRPT0ilwBw5ccRoC@sed.lcsvh.com/webcam).
+[Acesso ao OpenPLC](https://pi-sed.duckdns.org:8080/)
 
 # A Planta: Padaria Industrial
 
