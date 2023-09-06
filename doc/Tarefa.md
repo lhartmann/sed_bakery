@@ -1,4 +1,4 @@
-[Acesso ao OpenPLC](https://pi-sed.duckdns.org:8080/)
+[Acesso ao OpenPLC](https://pi-sed.duckdns.org/)
 
 # A Planta: Padaria Industrial
 
